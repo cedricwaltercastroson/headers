@@ -1,7 +1,7 @@
-#ifndef _VITASDK_H_
-#define _VITASDK_H_
+#ifndef _DOLCESDK_H_
+#define _DOLCESDK_H_
 
-#include <vitasdk/utils.h>
+#include <dolcesdk/utils.h>
 
 #include <psp2/types.h>
 #include <psp2/appmgr.h>

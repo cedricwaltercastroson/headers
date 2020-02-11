@@ -1,5 +1,5 @@
-#ifndef _VITASDKALIGN_H_
-#define _VITASDKALIGN_H_
+#ifndef _DOLCESDKALIGN_H_
+#define _DOLCESDKALIGN_H_
 
 #ifdef  __cplusplus
 extern "C" {
