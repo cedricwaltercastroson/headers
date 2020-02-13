@@ -1,84 +1,41 @@
-import re
+#!/usr/bin/env python3
+
+# DolceSDK Vita Headers
+# Copyright (C) 2020 浅倉麗子
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, version 3 of the License.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 import json
-try:
-    import urllib2
-except ImportError:
-    # python3?
-    import urllib.request as urllib2
+import urllib.request as request
 
-TRAVIS_REPO_ID = 10768510
-GITHUB_REPO = 'vitasdk/autobuilds'
-TRAVIS_API = 'https://api.travis-ci.org'
-TRAVIS_BUILDS = TRAVIS_API + '/repo/%d/builds' % TRAVIS_REPO_ID
-GITHUB = 'https://github.com'
-GITHUB_REL = GITHUB + '/' + GITHUB_REPO + '/releases'
-GITHUB_TAG = GITHUB_REL + '/tag'
-TAG_FORMAT = '%(branch)s-%(os)s-v%(build)s'
-REGEX = re.compile('href="([^"]*)"')
-HEADERS = dict()
-HEADERS['Travis-API-Version'] = 3
+RELEASES_URL = 'https://api.github.com/repos/DolceSDK/autobuilds/releases'
 
-def find_sdk(page, os='linux'):
-    for line in page.decode('utf-8').split('\n'):
-        if os not in line or 'tar.bz2' not in line:
-            continue
-        m = REGEX.search(line)
-        if not m:
-            continue
-        return m.group(1)
-
-def pager(page, limit=20):
-    return 'limit=%(limit)d&offset=%(offset)d' % dict(limit=limit, offset=page * limit)
-
-def fetch_succeeded_tags(branch='master', os='linux'):
-    for page in range(5):
-        try:
-            build_url = ''.join((
-                TRAVIS_BUILDS, '?',
-                pager(page),
-                '&branch=' + branch,
-                '&include=job.config,job.state',
-            ))
-            req = urllib2.Request(build_url, headers=HEADERS)
-            builds = json.load(urllib2.urlopen(req))
-
-            for build in builds['builds']:
-                for job in build['jobs']:
-                    if job['state'] != 'passed':
-                        continue
-                    # windows build
-                    if 'TOXENV=WIN' in job['config'].get('env', ''):
-                        if os != 'win':
-                            continue
-                    elif job['config']['os'] != os:
-                        continue
-
-                    yield (TAG_FORMAT % dict(branch=branch,
-                                             os=os,
-                                             build=build['number']))
-        except urllib2.HTTPError:
-            # FIXME: need to check; network error
-            continue
-        except ValueError:
-            # FIXME: need to check; json parse error
-            continue
-
-def last_built_toolchain(branch='master', os='linux'):
-    for tag in fetch_succeeded_tags(branch=branch, os=os):
-        req = urllib2.Request(GITHUB_TAG + '/' + tag)
-        try:
-            path = find_sdk(urllib2.urlopen(req).read(), os=os)
-            if not path:
-                continue
-        except urllib2.HTTPError:
-            continue
-        return GITHUB + path
+def last_built_toolchain(os='linux'):
+	with request.urlopen(RELEASES_URL) as res:
+		releases = json.loads(res.read().decode('utf-8'))
+		for release in releases:
+			for asset in release['assets']:
+				if os in asset['name']:
+					return asset['browser_download_url']
+	raise Exception('Toolchain for OS not found')
 
 if __name__ == '__main__':
-    import sys
+	import sys
 
-    url = last_built_toolchain(*sys.argv[1:])
-    if not url:
-        raise SystemExit(1)
-    print(url)
-    raise SystemExit(0)
+	try:
+		url = last_built_toolchain(*sys.argv[1:])
+	except Exception as e:
+		print(e)
+		sys.exit(1)
+
+	print(url)
