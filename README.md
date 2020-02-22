@@ -1,4 +1,4 @@
-# DolceSDK Headers
+# DolceSDK Headers [![Build Status](https://travis-ci.org/DolceSDK/headers.svg?branch=master)](https://travis-ci.org/DolceSDK/headers)
 
 This repository contains all Vita headers needed for development.
 

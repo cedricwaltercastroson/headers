@@ -1,54 +1,43 @@
 language: c
-sudo: false
-
+os: linux
 cache:
     directories:
         - $HOME/downloads
-
 before_script:
     - bash $TRAVIS_BUILD_DIR/.travis.d/download_external_apps.sh
-
 script:
     - set -e
     - cd $TRAVIS_BUILD_DIR
     - python $TRAVIS_BUILD_DIR/.travis.d/definition_check.py
     - bash $TRAVIS_BUILD_DIR/.travis.d/definition_ordering.sh
     - bash $TRAVIS_BUILD_DIR/.travis.d/download_sdk.sh
-    - export VITASDK=$PWD/vitasdk
-    - export PATH=$VITASDK/bin:$PATH
+    - export DOLCESDK=$PWD/dolcesdk
+    - export PATH=$DOLCESDK/bin:$PATH
     - export INCLUDE_DIR=$TRAVIS_BUILD_DIR/include
     # Make sure headers are valid
-    - find $INCLUDE_DIR -type f -name "*.h" | xargs -I FN -n 1 -P 4 arm-vita-eabi-gcc -I$INCLUDE_DIR -c FN -o /dev/null
-    - find $INCLUDE_DIR -type f -name "*.h" | xargs -I FN -n 1 -P 4 arm-vita-eabi-g++ -I$INCLUDE_DIR -c FN -o /dev/null
+    - find $INCLUDE_DIR -type f -name "*.h" | xargs -I FN -n 1 -P 4 arm-dolce-eabi-gcc -I$INCLUDE_DIR -c FN -o /dev/null
+    - find $INCLUDE_DIR -type f -name "*.h" | xargs -I FN -n 1 -P 4 arm-dolce-eabi-g++ -I$INCLUDE_DIR -c FN -o /dev/null
     - bash $TRAVIS_BUILD_DIR/.travis.d/download_external_libs.sh
-    - cd $VITASDK/arm-vita-eabi/include
-    - rm -rf psp2 psp2kern vitasdk vitasdk.h
-    - cd $VITASDK/arm-vita-eabi/lib
-    - rm -rf *_stub.a
+    # Remove installed headers and stubs
+    - cd $DOLCESDK/arm-dolce-eabi/include
+    - rm -rf psp2{,kern} dolcesdk dolcesdk{,kern}.h
+    - cd $DOLCESDK/arm-dolce-eabi/lib
+    - rm -rf *_stub{,_weak}.a
+    # Build headers and stubs and install
     - cd $TRAVIS_BUILD_DIR
-    - cp -r include/* $VITASDK/arm-vita-eabi/include
-    - vita-libs-gen db.yml output
+    - cp -r include/* $DOLCESDK/arm-dolce-eabi/include
+    - dolce-libs-gen db.yml output
     - cd output
     - make > /dev/null
-    - cp *_stub.a $VITASDK/arm-vita-eabi/lib
+    - cp *_stub{,_weak}.a $DOLCESDK/arm-dolce-eabi/lib
+    # Build samples
     - cd $TRAVIS_BUILD_DIR
-    - git clone https://github.com/vitasdk/samples
+    - git clone https://github.com/DolceSDK/samples
     - cd samples
     - mkdir build
     - cd build
     - cmake ..
     - make
-
-before_deploy:
-    - git config --global user.email "builds@travis-ci.com"
-    - git config --global user.name "Travis CI"
-
-deploy:
-    provider: script
-    overwrite: true
-    skip_cleanup: true
-    script: bash $TRAVIS_BUILD_DIR/.travis.d/deploy_docs.sh
-    on:
-        tags: false
-        branch:
-            - master
+    # Build docs
+    - cd $TRAVIS_BUILD_DIR/docs
+    - $HOME/doxygen/doxygen*/bin/doxygen
