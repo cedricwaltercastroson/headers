@@ -251,6 +251,16 @@ int kscePowerSetGpuClockFrequency(int freq);
  */
 int kscePowerSetGpuXbarClockFrequency(int freq);
 
+/**
+ * Sets the time before idle callback is notified.
+ *
+ * @param callback_slot - Callback slot from 0 to 7.
+ * @param time - Time in microseconds.
+ *
+ * @return 0 on success, < 0 on error
+ */
+int kscePowerSetIdleTimer(int callback_slot, SceUInt64 time);
+
 #ifdef __cplusplus
 }
 #endif
