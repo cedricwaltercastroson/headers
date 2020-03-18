@@ -14,6 +14,7 @@ extern "C" {
 #endif
 
 int ksceSblACMgrIsShell(SceUID pid);
+int ksceSblACMgrIsPspEmu(SceUID pid);
 int ksceSblACMgrIsGameProgram(SceUID pid);
 int ksceSblACMgrIsNonGameProgram(SceUID pid);
 int ksceSblACMgrIsDevelopmentMode(void);
