@@ -8973,6 +8973,7 @@ modules:
           ksceDebugPrintf2: 0x02B04343
           ksceDebugPrintfKernelAssertion: 0x821A2D59
           ksceDebugPrintfKernelPanic: 0x00CCE39C
+          ksceDebugVprintf: 0x411C0733
       SceDebugForKernel:
         kernel: true
         nid: 0x88C17370

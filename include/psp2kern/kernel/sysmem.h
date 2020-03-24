@@ -6,6 +6,7 @@
 #ifndef _PSP2_KERNEL_SYSMEM_H_
 #define _PSP2_KERNEL_SYSMEM_H_
 
+#include <stdarg.h>
 #include <psp2kern/types.h>
 
 #ifdef __cplusplus
@@ -444,7 +445,9 @@ typedef struct kernel_message_ctx
 // msg_type_flag : 0 or 0xB
 
 int ksceDebugPrintf2(int msg_type_flag, kernel_message_ctx *msg_ctx, const char *fmt, ...);
-	
+
+int ksceDebugVprintf(const char *fmt, va_list args);
+
 int ksceDebugPrintKernelPanic(kernel_message_ctx *msg_ctx, void *some_address);
 
 int ksceDebugPrintfKernelPanic(kernel_message_ctx *msg_ctx, void *some_address, char* format, ...);
