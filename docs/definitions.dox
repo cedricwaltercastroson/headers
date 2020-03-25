@@ -17,8 +17,14 @@
  *     \defgroup SceGxt GXT Files Manipulation Library
  *      Runtime manipulation of GXT files produced using the offline texture tools.
  *
+ *     \defgroup SceJpeg JPEG Decoding Library
+ *      Decode JPEG from a file or buffer
+ *
  *     \defgroup SceJpegEnc JPEG Encoding Library
  *      Encode a JPEG from a buffer
+ *
+ *     \defgroup SceAvPlayer MP4 Player Library
+ *      Decode MP4 video and audio content
  *
  *     \defgroup SceVideoDec Video Decoding Library
  *      Decode Sony AVC MP4 video format
