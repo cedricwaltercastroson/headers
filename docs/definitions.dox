@@ -40,6 +40,9 @@
  *     \defgroup SceTouch Touch Library
  *      Read touch input
  *
+ *     \defgroup SceSystemGesture Touch Gesture Library
+ *      Read touch gestures
+ *
  *     \defgroup SceCamera Camera Library
  *      Set Camera parameters, and capture images
  *
