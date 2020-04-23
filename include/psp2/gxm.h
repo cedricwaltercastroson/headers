@@ -1552,6 +1552,8 @@ int sceGxmTransferCopy(uint32_t width, uint32_t height, uint32_t colorKeyValue, 
 int sceGxmTransferDownscale(SceGxmTransferFormat srcFormat, const void *srcAddress, unsigned int srcX, unsigned int srcY, unsigned int srcWidth, unsigned int srcHeight, int srcStride, SceGxmTransferFormat destFormat, void *destAddress, unsigned int destX, unsigned int destY, int destStride, SceGxmSyncObject *syncObject, unsigned int syncFlags, const SceGxmNotification* notification);
 int sceGxmTransferFinish(void);
 
+SceGxmErrorCode sceGxmVshInitialize(const SceGxmInitializeParams *params);
+
 #ifdef __cplusplus
 }
 #endif
