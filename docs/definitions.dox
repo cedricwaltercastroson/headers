@@ -308,6 +308,9 @@
  * \{
  *     \defgroup SceTypes Types Defines
  *      Define various Scetypes that are used in the Vitasdk
+ *
+ *     \defgroup SceBase Base Defines
+ *      Defines base definitions
  * \}
  *
  *
