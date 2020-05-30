@@ -89,8 +89,11 @@
  *     \defgroup SceMessageDialog Message Dialog Library
  *      Init a Message Dialog and display it
  *
- *     \defgroup SceIme Ime Dialog Library
- *      Get text from an Ime Dialog
+ *     \defgroup SceImeDialog IME Dialog Library
+ *      Common Dialog IME library
+ *
+ *     \defgroup SceIme Ime Library
+ *      Library for communicating with IME
  *
  *     \defgroup SceNetCheckDialog NetCheck Dialog Library
  *      Net checking dialog
