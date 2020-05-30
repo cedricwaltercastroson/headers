@@ -805,6 +805,11 @@ typedef enum SceGxmTextureFormat {
 	SCE_GXM_TEXTURE_FORMAT_PVRTII4BPP = SCE_GXM_TEXTURE_FORMAT_PVRTII4BPP_ABGR
 } SceGxmTextureFormat;
 
+/** A mask used to extract swizzle information from a SceGxmTextureFormat
+	value.
+*/
+#define	SCE_GXM_TEXTURE_SWIZZLE_MASK    0x00007000U
+
 typedef enum SceGxmTextureType {
 	SCE_GXM_TEXTURE_SWIZZLED             = 0x00000000u,
 	SCE_GXM_TEXTURE_CUBE                 = 0x40000000u,
@@ -1466,11 +1471,62 @@ unsigned int sceGxmShaderPatcherGetBufferMemAllocated(const SceGxmShaderPatcher 
 unsigned int sceGxmShaderPatcherGetVertexUsseMemAllocated(const SceGxmShaderPatcher *shaderPatcher);
 unsigned int sceGxmShaderPatcherGetFragmentUsseMemAllocated(const SceGxmShaderPatcher *shaderPatcher);
 
-int sceGxmTextureInitSwizzled(SceGxmTexture *texture, const void *data, SceGxmTextureFormat texFormat, unsigned int width, unsigned int height, unsigned int mipCount);
-int sceGxmTextureInitLinear(SceGxmTexture *texture, const void *data, SceGxmTextureFormat texFormat, unsigned int width, unsigned int height, unsigned int mipCount);
-int sceGxmTextureInitLinearStrided(SceGxmTexture *texture, const void *data, SceGxmTextureFormat texFormat, unsigned int width, unsigned int height, unsigned int byteStride);
-int sceGxmTextureInitTiled(SceGxmTexture *texture, const void *data, SceGxmTextureFormat texFormat, unsigned int width, unsigned int height, unsigned int mipCount);
-int sceGxmTextureInitCube(SceGxmTexture *texture, const void *data, SceGxmTextureFormat texFormat, unsigned int width, unsigned int height, unsigned int mipCount);
+SceGxmErrorCode sceGxmTextureInitSwizzled(
+	SceGxmTexture *texture,
+	const void *data,
+	SceGxmTextureFormat texFormat,
+	uint32_t width,
+	uint32_t height,
+	uint32_t mipCount);
+
+SceGxmErrorCode sceGxmTextureInitSwizzledArbitrary(
+	SceGxmTexture *texture,
+	const void *data,
+	SceGxmTextureFormat texFormat,
+	uint32_t width,
+	uint32_t height,
+	uint32_t mipCount);
+
+SceGxmErrorCode sceGxmTextureInitLinear(
+	SceGxmTexture *texture,
+	const void *data,
+	SceGxmTextureFormat
+	texFormat,
+	uint32_t width,
+	uint32_t height,
+	uint32_t mipCount);
+
+SceGxmErrorCode sceGxmTextureInitLinearStrided(
+	SceGxmTexture *texture,
+	const void *data,
+	SceGxmTextureFormat texFormat,
+	uint32_t width,
+	uint32_t height,
+	uint32_t byteStride);
+
+SceGxmErrorCode sceGxmTextureInitTiled(
+	SceGxmTexture *texture,
+	const void *data,
+	SceGxmTextureFormat texFormat,
+	uint32_t width,
+	uint32_t height,
+	uint32_t mipCount);
+
+SceGxmErrorCode sceGxmTextureInitCube(
+	SceGxmTexture *texture,
+	const void *data,
+	SceGxmTextureFormat texFormat,
+	uint32_t width,
+	uint32_t height,
+	uint32_t mipCount);
+
+SceGxmErrorCode sceGxmTextureInitCubeArbitrary(
+	SceGxmTexture *texture,
+	const void *data,
+	SceGxmTextureFormat texFormat,
+	uint32_t width,
+	uint32_t height,
+	uint32_t mipCount);
 
 SceGxmTextureType sceGxmTextureGetType(const SceGxmTexture *texture);
 
