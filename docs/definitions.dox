@@ -330,6 +330,9 @@
  *     \defgroup ScePromoterUtil Promoter utility
  *      Install/Delete Packages
  *
+ *     \defgroup SceNotificationUtil Shell notification utility
+ *      Send notifications to shell
+ *
  *     \defgroup SceNpDrmPackage NpDrmPackage utility
  *      Check/Decrypt NpDrmPackages
  *
