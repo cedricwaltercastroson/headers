@@ -97,6 +97,9 @@
  *
  *     \defgroup SceNetCheckDialog NetCheck Dialog Library
  *      Net checking dialog
+ *
+ *     \defgroup SceIncomingDialog Incoming Dialog Libary
+ *      Shell incoming dialog
  * \}
  *
  *
