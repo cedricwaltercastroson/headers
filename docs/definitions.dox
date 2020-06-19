@@ -351,5 +351,8 @@
  *     \defgroup SceCompat Compat Library
  *      PspEmu communication
  *
+ *     \defgroup SceError Error codes
+ *      System error codes
+ *
  * \}
  */
