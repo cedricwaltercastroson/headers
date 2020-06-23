@@ -22,9 +22,6 @@
  *
  *     \defgroup SceVideoDec Video Decoding Library
  *      Decode Sony AVC MP4 video format
- *
- *     \defgroup SceSharedFb Shared Framebuffer Library
- *      System apps framebuffer related functions.
  * \}
  *
  *

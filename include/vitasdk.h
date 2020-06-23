@@ -44,7 +44,6 @@
 #include <psp2/registrymgr.h>
 #include <psp2/rtc.h>
 #include <psp2/screenshot.h>
-#include <psp2/sharedfb.h>
 #include <psp2/shellutil.h>
 #include <psp2/shutter_sound.h>
 #include <psp2/sqlite.h>

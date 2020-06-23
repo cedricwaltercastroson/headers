@@ -2090,7 +2090,7 @@ modules:
           sceGxmGetPrecomputedDrawSize: 0x41BBD792
           sceGxmGetPrecomputedFragmentStateSize: 0x85DE8506
           sceGxmGetPrecomputedVertexStateSize: 0x9D83CA3B
-          sceGxmGetRenderTargetMemSize: 0xB291C959
+          sceGxmGetRenderTargetMemSizes: 0xB291C959
           sceGxmInitialize: 0xB0F1E4EC
           sceGxmIsDebugVersion: 0x873B07C0
           sceGxmMapFragmentUsseMemory: 0x008402C6
@@ -2291,11 +2291,6 @@ modules:
           sceGxmVertexFence: 0xE05277D6
           sceGxmVertexProgramGetProgram: 0xBC52320E
           sceGxmWaitEvent: 0x8BD94593
-      SceGxmInternalForVsh:
-        kernel: false
-        nid: 0xC98AEB79
-        functions:
-          sceGxmVshInitialize: 0xA04F5FAC
   SceHandwriting:
     nid: 0x18983E63
     libraries:

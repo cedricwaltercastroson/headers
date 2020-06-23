@@ -1286,7 +1286,6 @@ typedef struct SceGxmRenderTargetParams {
 /* prototypes */
 
 int sceGxmInitialize(const SceGxmInitializeParams *params);
-int sceGxmVshInitialize(const SceGxmInitializeParams *params);
 int sceGxmTerminate();
 
 volatile unsigned int *sceGxmGetNotificationRegion();
@@ -1541,7 +1540,7 @@ int sceGxmPrecomputedDrawSetVertexStream(SceGxmPrecomputedDraw *precomputedDraw,
 void sceGxmPrecomputedDrawSetParams(SceGxmPrecomputedDraw *precomputedDraw, SceGxmPrimitiveType primType, SceGxmIndexFormat indexType, const void *indexData, unsigned int indexCount);
 void sceGxmPrecomputedDrawSetParamsInstanced(SceGxmPrecomputedDraw *precomputedDraw, SceGxmPrimitiveType primType, SceGxmIndexFormat indexType, const void *indexData, unsigned int indexCount, unsigned int indexWrap);
 
-int sceGxmGetRenderTargetMemSize(const SceGxmRenderTargetParams *params, unsigned int *driverMemSize);
+int sceGxmGetRenderTargetMemSizes(const SceGxmRenderTargetParams *params, unsigned int *hostMemSize, unsigned int *driverMemSize);
 int sceGxmCreateRenderTarget(const SceGxmRenderTargetParams *params, SceGxmRenderTarget **renderTarget);
 int sceGxmRenderTargetGetHostMem(const SceGxmRenderTarget *renderTarget, void **hostMem);
 int sceGxmRenderTargetGetDriverMemBlock(const SceGxmRenderTarget *renderTarget, SceUID *driverMemBlock);
