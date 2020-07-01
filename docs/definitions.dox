@@ -20,6 +20,9 @@
  *     \defgroup SceJpeg JPEG Decoding Library
  *      Decode JPEG from a file or buffer
  *
+ *     \defgroup SceJpegArm JPEG ARM Decoding Library
+ *      Decode JPEG from a file or buffer using the ARM processor
+ *
  *     \defgroup SceJpegEnc JPEG Encoding Library
  *      Encode a JPEG from a buffer
  *
