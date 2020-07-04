@@ -1,4 +1,4 @@
-﻿/**
+/**
  * \usergroup{SceAvPlayer}
  * \usage{psp2/avplayer.h,SceAvPlayer_stub}
  */

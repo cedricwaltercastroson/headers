@@ -1,4 +1,4 @@
-﻿/**
+/**
  * \usergroup{SceIncomingDialog}
  * \usage{psp2/incoming_dialog.h,SceIncomingDialog_stub,SCE_SYSMODULE_INCOMING_DIALOG}
  */

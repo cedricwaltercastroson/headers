@@ -1,4 +1,4 @@
-﻿/**
+/**
  * \usergroup{SceNotificationUtil}
  * \usage{psp2/notification_util.h,SceNotificationUtil_stub,SCE_SYSMODULE_NOTIFICATION_UTIL}
  */

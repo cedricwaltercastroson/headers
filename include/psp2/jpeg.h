@@ -1,4 +1,4 @@
-﻿/**
+/**
  * \usergroup{SceJpeg}
  * \usage{psp2/jpeg.h,SceJpeg_stub}
  */

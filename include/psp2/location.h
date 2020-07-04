@@ -1,4 +1,4 @@
-﻿/**
+/**
  * \usergroup{SceLocation}
  * \usage{psp2/location.h,SceLibLocation_stub,SCE_SYSMODULE_LOCATION}
  */
