@@ -83,6 +83,9 @@
  *
  *     \defgroup SceSas Synthesizer Processing Library
  *      Waveform data sound generation, pitch change, envelope processing and digital effects on voice data
+ *
+ *     \defgroup SceCodecEngine Codec Engine media processor
+ *      Operations related to the Codec Engine media processor
  * \}
  *
  *
