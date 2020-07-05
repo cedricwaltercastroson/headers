@@ -164,6 +164,9 @@
  *     \defgroup SceKernelError Kernel Errors
  *      List of the Kernel Errors that can happen
  *
+ *     \defgroup SceKernelConstant Kernel Constants
+ *      Constants relating to kernel functions
+ *
  *     \defgroup SceLoadcore Loadcore Library
  *      Loadcore library
  *

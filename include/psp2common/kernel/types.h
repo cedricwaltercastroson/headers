@@ -26,8 +26,6 @@ typedef SceInt64 SceIores;
 
 typedef SceUInt64 SceKernelSysClock;
 
-#define SCE_UID_NAMELEN 31
-
 #endif // !defined(_LANGUAGE_ASSEMBLY)
 
 #ifdef __cplusplus
