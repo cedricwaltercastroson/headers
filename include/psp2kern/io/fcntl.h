@@ -7,7 +7,7 @@
 #ifndef _PSP2_IO_FCNTL_H_
 #define _PSP2_IO_FCNTL_H_
 
-#include <psp2kern/types.h>
+#include <psp2kern/kernel/types.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -15,7 +15,7 @@ extern "C" {
 
 /** Note: Not all of these ::ksceIoOpen flags are not compatible with the
    open() flags found in sys/unistd.h. */
-typedef enum SceIoMode {
+typedef enum _SceIoMode {
 	SCE_O_RDONLY    = 0x0001,                         //!< Read-only
 	SCE_O_WRONLY    = 0x0002,                         //!< Write-only
 	SCE_O_RDWR      = (SCE_O_RDONLY | SCE_O_WRONLY),  //!< Read/Write
@@ -34,7 +34,7 @@ typedef enum SceIoMode {
 	SCE_O_FDEXCL    = 0x01000000,                     //!< Exclusive access
 	SCE_O_PWLOCK    = 0x02000000,                     //!< Power control lock
 	SCE_O_FGAMEDATA = 0x40000000                      //!< Gamedata access
-} SceIoMode;
+} _SceIoMode;
 
 typedef enum SceIoSeekMode {
 	SCE_SEEK_SET,   //!< Starts from the begin of the file
