@@ -15,6 +15,7 @@
 #include <psp2/audioout.h>
 #include <psp2/avconfig.h>
 #include <psp2/avplayer.h>
+#include <psp2/bgapputil.h>
 #include <psp2/camera.h>
 #include <psp2/codecengine.h>
 #include <psp2/common_dialog.h>

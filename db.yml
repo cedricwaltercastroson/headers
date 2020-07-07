@@ -947,6 +947,14 @@ modules:
           sceBbmcUsbExtIfStop: 0xF82F293A
           sceBbmcUsbExtIfWrite: 0x4034E750
           sceBbmcVerifyPin: 0x057B2157
+  SceBgAppUtil:
+    nid: 0x795E683F
+    libraries:
+      SceBgAppUtil:
+        kernel: false
+        nid: 0xF9516A07
+        functions:
+          sceBgAppUtilStartBgApp: 0x7C3525B5
   SceBt:
     nid: 0xF56868B7
     libraries:

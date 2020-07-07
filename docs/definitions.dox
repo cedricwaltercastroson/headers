@@ -252,6 +252,9 @@
  *     \defgroup SceAVConfig Audio-Video Configuration Library
  *      Brightness, Volume, HDMI settings...
  *
+ *     \defgroup SceBgAppUtil Background Application Utils Library
+ *      Launch background application
+ *
  *     \defgroup ScePower Power Library
  *      Battery status, CPU speed...
  *
