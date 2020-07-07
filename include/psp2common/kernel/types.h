@@ -24,7 +24,13 @@ typedef int SceMode;
 typedef SceInt64 SceIores;
 #endif
 
-typedef SceUInt64 SceKernelSysClock;
+typedef union _SceKernelSysClock {
+	struct {
+		SceUInt32 low;
+		SceUInt32 hi;
+	} u;
+	SceUInt64 quad;
+} SceKernelSysClock;
 
 #endif // !defined(_LANGUAGE_ASSEMBLY)
 
