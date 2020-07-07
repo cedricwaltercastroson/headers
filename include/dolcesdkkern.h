@@ -1,6 +1,8 @@
 #ifndef _DOLCESDKKERN_H_
 #define _DOLCESDKKERN_H_
 
+#pragma GCC warning "Including dolcesdkkern.h is deprecated. Please include individual headers."
+
 #include <dolcesdk/utils.h>
 
 #include <psp2kern/appmgr.h>
