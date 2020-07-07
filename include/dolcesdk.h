@@ -89,6 +89,7 @@
 #include <psp2/system_param.h>
 #include <psp2/systemgesture.h>
 #include <psp2/touch.h>
+#include <psp2/trigger_util.h>
 #include <psp2/types.h>
 #include <psp2/udcd.h>
 #include <psp2/usbd.h>

@@ -270,6 +270,9 @@
  *     \defgroup SceShellSvc Shell Utils Library
  *      Set handlers for opening various menus
  *
+ *     \defgroup SceTriggerUtil Event Trigger Utils Library
+ *      Register daily and one time application auto-start
+ *
  *     \defgroup SceVshBridge VSH Bridge Library
  *      Model info, System, Memory card state...
  * \}
