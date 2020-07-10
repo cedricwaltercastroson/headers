@@ -369,5 +369,8 @@
  *     \defgroup SceError Error codes
  *      System error codes
  *
+ *     \defgroup SceDbg Debug functions library
+ *      Logging and assertion functions
+ *
  * \}
  */

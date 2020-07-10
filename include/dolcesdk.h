@@ -53,6 +53,7 @@
 #include <psp2/kernel/sysmem.h>
 #include <psp2/kernel/threadmgr.h>
 #include <psp2/kernel/types.h>
+#include <psp2/libdbg.h>
 #include <psp2/libime.h>
 #include <psp2/libssl.h>
 #include <psp2/location.h>
