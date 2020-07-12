@@ -84,7 +84,7 @@
 #include <psp2/sblacmgr.h>
 #include <psp2/scebase.h>
 #include <psp2/screenshot.h>
-#include <psp2/shellutil.h>
+#include <psp2/shellsvc.h>
 #include <psp2/shutter_sound.h>
 #include <psp2/sqlite.h>
 #include <psp2/sysmodule.h>

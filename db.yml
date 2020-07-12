@@ -8507,6 +8507,11 @@ modules:
   SceShellSvc:
     nid: 0x821DC423
     libraries:
+      SceShellSvc:
+        kernel: false
+        nid: 0x773242C7
+        functions:
+          sceShellSvcGetSvcObj: 0xB31E7F1C
       SceShellUtil:
         kernel: false
         nid: 0xD2B1C8AE
