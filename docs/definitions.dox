@@ -86,6 +86,12 @@
  *
  *     \defgroup SceCodecEngine Codec Engine media processor
  *      Operations related to the Codec Engine media processor
+ *
+ *     \defgroup SceNgs Audio Engine Library
+ *      Audio engine library
+ *
+ *     \defgroup SceSulpha Audio Debugging Library
+ *      Audio debugging library
  * \}
  *
  *
