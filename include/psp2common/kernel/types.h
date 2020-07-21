@@ -24,6 +24,15 @@ typedef int SceMode; /* for backward compatibility */
 typedef SceInt64 SceIores;
 #endif
 
+typedef struct SceIoAsyncParam {
+	int result; // [out] result of the IO operation (e.g. UID, read/wrote size, error code)
+	int unk_04; // [out]
+	int unk_08; // [in]
+	int unk_0C; // [out]
+	int unk_10; // [out]
+	int unk_14; // [out]
+} SceIoAsyncParam;
+
 typedef union _SceKernelSysClock {
 	struct {
 		SceUInt32 low;

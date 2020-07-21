@@ -34,7 +34,6 @@
 #include <psp2/ime_dialog.h>
 #include <psp2/incoming_dialog.h>
 #include <psp2/io/devctl.h>
-#include <psp2/io/fcntl.h>
 #include <psp2/jpeg.h>
 #include <psp2/jpegarm.h>
 #include <psp2/jpegenc.h>
