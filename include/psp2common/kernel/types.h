@@ -17,7 +17,7 @@ extern "C" {
 typedef SceUInt32 SceKernelMemBlockType;
 
 typedef int SceIoMode;
-typedef int SceMode;
+typedef int SceMode; /* for backward compatibility */
 
 #ifndef _SCE_KERNEL_IORES_T
 #define _SCE_KERNEL_IORES_T

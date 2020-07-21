@@ -34,9 +34,7 @@
 #include <psp2/ime_dialog.h>
 #include <psp2/incoming_dialog.h>
 #include <psp2/io/devctl.h>
-#include <psp2/io/dirent.h>
 #include <psp2/io/fcntl.h>
-#include <psp2/io/stat.h>
 #include <psp2/jpeg.h>
 #include <psp2/jpegarm.h>
 #include <psp2/jpegenc.h>
@@ -45,6 +43,9 @@
 #include <psp2/kernel/cpu.h>
 #include <psp2/kernel/dmac.h>
 #include <psp2/kernel/error.h>
+#include <psp2/kernel/iofilemgr.h>
+#include <psp2/kernel/iofilemgr/dirent.h>
+#include <psp2/kernel/iofilemgr/stat.h>
 #include <psp2/kernel/loadcore.h>
 #include <psp2/kernel/modulemgr.h>
 #include <psp2/kernel/openpsid.h>

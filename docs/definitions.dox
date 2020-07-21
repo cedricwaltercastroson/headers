@@ -132,6 +132,9 @@
  *
  *     \defgroup SceStat File Status Library
  *      Make/Remove a dir, Read/Change the status of a file
+ *
+ *     \defgroup SceIofilemgr Filesystem Library
+ *      Filesystem related functions
  * \}
  *
  *
