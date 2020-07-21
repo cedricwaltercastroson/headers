@@ -6,8 +6,6 @@
 #ifndef _DOLCESDK_PSP2_NGS_MODULES_INPUT_MIXER_H_
 #define _DOLCESDK_PSP2_NGS_MODULES_INPUT_MIXER_H_
 
-#include <psp2/ngs.h>
-
 #define SCE_NGS_INPUT_MIXER_ID (0x5CE0)
 
 #endif
