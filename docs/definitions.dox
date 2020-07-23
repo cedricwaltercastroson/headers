@@ -121,9 +121,6 @@
  * \defgroup Filesystem Filesystem
  *  List dirs, find files, delete them, mount partitions...
  * \{
- *     \defgroup SceDevCtl Device Control Library
- *      Send devctl commands, (un)assign io devices
- *
  *     \defgroup SceIofilemgr Filesystem Library
  *      Filesystem related functions
  * \}

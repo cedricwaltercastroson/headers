@@ -65,6 +65,16 @@ extern "C" {
 #define SCE_IO_MAX_PATH_LENGTH       (200)  /* maximum path length */
 
 /**
+ * May be used with ksceIoDevctl()
+ */
+typedef struct SceIoDevInfo {
+  SceOff max_size;
+  SceOff free_size;
+  SceSize cluster_size;
+  void *unk;
+} SceIoDevInfo;
+
+/**
  * Remove directory entry
  *
  * @param filename - Path to the file to remove
@@ -257,6 +267,36 @@ SceSSize ksceIoPwrite(SceUID fd, const void *buf, SceSize nbyte, SceOff offset);
  * @return < 0 on error.
  */
 int ksceIoSyncByFd(SceUID fd, int flag);
+
+/*--------------------Async IO--------------------*/
+
+/**
+  * This function is unimplemented.
+  *
+  * @return SCE_KERNEL_ERROR_UNSUP (0x80020004)
+  */
+int ksceIoIoctlAsync(
+  SceUID fd,
+  int cmd,
+  const void *argp,
+  SceSize arglen,
+  void *bufp,
+  SceSize buflen,
+  SceIoAsyncParam* asyncParam);
+
+/**
+  * This function is unimplemented.
+  *
+  * @return SCE_KERNEL_ERROR_UNSUP (0x80020004)
+  */
+int ksceIoDevctlAsync(
+  const char *devname,
+  int cmd,
+  const void *arg,
+  SceSize arglen,
+  void *bufp,
+  SceSize buflen,
+  SceIoAsyncParam* asyncParam);
 
 /*--------------------Device mount functions--------------------*/
 

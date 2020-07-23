@@ -14,7 +14,6 @@
 #include <psp2kern/display.h>
 #include <psp2kern/error.h>
 #include <psp2kern/idstorage.h>
-#include <psp2kern/io/devctl.h>
 #include <psp2kern/kernel/constants.h>
 #include <psp2kern/kernel/cpu.h>
 #include <psp2kern/kernel/dmac.h>
