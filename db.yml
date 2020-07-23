@@ -3111,6 +3111,7 @@ modules:
           ksceKernelLockMutex: 0x16AC80C5
           ksceKernelLockMutexCB_089: 0xD06F2886
           ksceKernelNotifyCallback: 0xC3E00919
+          ksceKernelPollEvent: 0xD08C71C6
           ksceKernelPollEventFlag: 0x76C6555B
           ksceKernelPollSema: 0x4FDDFE24
           ksceKernelPulseEvent: 0x2427C81B
