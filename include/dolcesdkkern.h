@@ -21,6 +21,7 @@
 #include <psp2kern/kernel/excpmgr.h>
 #include <psp2kern/kernel/intrmgr.h>
 #include <psp2kern/kernel/iofilemgr.h>
+#include <psp2kern/kernel/iofilemgr/async.h>
 #include <psp2kern/kernel/iofilemgr/dirent.h>
 #include <psp2kern/kernel/iofilemgr/stat.h>
 #include <psp2kern/kernel/modulemgr.h>

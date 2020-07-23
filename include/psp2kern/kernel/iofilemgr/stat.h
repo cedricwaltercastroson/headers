@@ -7,6 +7,7 @@
 #define _DOLCESDK_PSP2KERN_KERNEL_IOFILEMGR_STAT_H_
 
 #include <psp2kern/kernel/types.h>
+#include <psp2kern/kernel/iofilemgr/async.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -85,6 +86,50 @@ int ksceIoGetstatByFd(SceUID fd, SceIoStat *buf);
   * @return < 0 on error.
   */
 int ksceIoChstatByFd(SceUID fd, const SceIoStat *buf, unsigned int cbit);
+
+/**
+ * Make a directory file (asynchronous)
+ *
+ * @param dir - The path to the directory
+ * @param mode - Access mode (One or more ::SceIoAccessMode).
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+SceUID ksceIoMkdirAsync(const char *dir, SceMode mode, SceIoAsyncParam* asyncParam);
+
+/**
+ * Remove a directory file (asynchronous)
+ *
+ * @param path - Removes a directory file pointed by the string path
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+SceUID ksceIoRmdirAsync(const char *path, SceIoAsyncParam* asyncParam);
+
+/**
+  * Get the status of a file (asynchronous)
+  *
+  * @param file - The path to the file.
+  * @param stat - A pointer to a ::SceIoStat structure.
+  * @param asyncParam - parameters related to async operation.
+  *
+  * @return A non-negative integer is a valid op handle, anything else an error
+  */
+SceUID ksceIoGetstatAsync(const char *file, SceIoStat *stat, SceIoAsyncParam* asyncParam);
+
+/**
+  * Change the status of a file (asynchronous)
+  *
+  * @param file - The path to the file.
+  * @param stat - A pointer to a ::SceIoStat structure.
+  * @param bits - Bitmask defining which bits to change.
+  * @param asyncParam - parameters related to async operation.
+  *
+  * @return A non-negative integer is a valid op handle, anything else an error
+  */
+SceUID ksceIoChstatAsync(const char *file, SceIoStat *stat, int bits, SceIoAsyncParam* asyncParam);
 
 #ifdef __cplusplus
 }

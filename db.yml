@@ -2586,6 +2586,7 @@ modules:
           ksceIoClearErrorEvent: 0x40B933C7
           ksceIoClose: 0xF99DD8A3
           ksceIoCloseAsync: 0x11C57CC6
+          ksceIoComplete: 0x8F0DE34D
           ksceIoCreateErrorEvent: 0x3C0343DB
           ksceIoCreateMountEvent: 0x2DFA192F
           ksceIoDclose: 0x19C81DD6
@@ -2601,7 +2602,9 @@ modules:
           ksceIoDreadAsync: 0x5982B0E3
           ksceIoFlock: 0x16336A0D
           ksceIoGetMediaType: 0x9C220246
+          ksceIoGetPriorityForSystem: 0x9FCDCE62
           ksceIoGetProcessDefaultPriorityForSystem: 0xCE397158
+          ksceIoGetThreadDefaultPriorityForSystem: 0x6D0FEDB6
           ksceIoGetstat: 0x75C96D25
           ksceIoGetstat2: 0xD6503624
           ksceIoGetstatAsync: 0x94A5304A
@@ -2630,7 +2633,9 @@ modules:
           ksceIoRmdir: 0x1CC9C634
           ksceIoRmdirAsync: 0xF5B0B36C
           ksceIoSetPathMappingFunction: 0xCFAECF18
+          ksceIoSetPriorityForSystem: 0xCCE94599
           ksceIoSetProcessDefaultPriorityForSystem: 0xABE65071
+          ksceIoSetThreadDefaultPriorityForSystem: 0x3F0FF9D5
           ksceIoSync: 0xDDF78594
           ksceIoSyncAsync: 0x4F9EA8B0
           ksceIoSyncByFd: 0x338DCD68

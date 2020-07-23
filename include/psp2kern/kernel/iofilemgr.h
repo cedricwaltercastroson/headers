@@ -7,6 +7,7 @@
 #define _DOLCESDK_PSP2KERN_KERNEL_IOFILEMGR_H_
 
 #include <psp2kern/kernel/types.h>
+#include <psp2kern/kernel/iofilemgr/async.h>
 #include <psp2kern/kernel/iofilemgr/stat.h>
 #include <psp2kern/kernel/iofilemgr/dirent.h>
 
@@ -271,6 +272,133 @@ int ksceIoSyncByFd(SceUID fd, int flag);
 /*--------------------Async IO--------------------*/
 
 /**
+ * Remove directory entry (asynchronous)
+ *
+ * @param file - Path to the file to remove
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+int ksceIoRemoveAsync(const char *file, SceIoAsyncParam* asyncParam);
+
+/**
+ * Change the name of a file (asynchronous)
+ *
+ * @param oldname - The old filename
+ * @param newname - The new filename
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+SceUID ksceIoRenameAsync(const char *oldname, const char *newname, SceIoAsyncParam* asyncParam);
+
+/**
+ * Open or create a file for reading or writing (asynchronous)
+ *
+ * @param file - Pointer to a string holding the name of the file to open
+ * @param flags - Libc styled flags that are or'ed together
+ * @param mode - File access mode (One or more ::SceIoMode).
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+SceUID ksceIoOpenAsync(const char *file, int flags, SceMode mode, SceIoAsyncParam* asyncParam);
+
+/**
+ * Delete a descriptor (asynchronous)
+ *
+ * @param fd - File descriptor to close
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+SceUID ksceIoCloseAsync(SceUID fd, SceIoAsyncParam* asyncParam);
+
+/**
+ * Read input (asynchronous)
+ *
+ * @param fd - Opened file descriptor to read from
+ * @param data - Pointer to the buffer where the read data will be placed
+ * @param size - Size of the read in bytes
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+SceUID ksceIoReadAsync(SceUID fd, void *data, SceSize size, SceIoAsyncParam* asyncParam);
+
+/**
+ * Read input at offset (asynchronous)
+ *
+ * @param fd - Opened file descriptor to read from
+ * @param data - Pointer to the buffer where the read data will be placed
+ * @param size - Size of the read in bytes
+ * @param offset - Offset to read
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+SceUID ksceIoPreadAsync(SceUID fd, void *data, SceSize size, SceOff offset, SceIoAsyncParam* asyncParam);
+
+/**
+ * Write output (asynchronous)
+ *
+ * @param fd - Opened file descriptor to write to
+ * @param data - Pointer to the data to write
+ * @param size - Size of data to write
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+SceUID ksceIoWriteAsync(SceUID fd, const void *data, SceSize size, SceIoAsyncParam* asyncParam);
+
+/**
+ * Write output at offset (asynchronous)
+ *
+ * @param fd - Opened file descriptor to write to
+ * @param data - Pointer to the data to write
+ * @param size - Size of data to write
+ * @param offset - Offset to write
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+SceUID ksceIoPwriteAsync(SceUID fd, const void *data, SceSize size, SceOff offset, SceIoAsyncParam* asyncParam);
+
+/**
+ * Reposition read/write file descriptor offset (asynchronous)
+ *
+ * @param fd - Opened file descriptor with which to seek
+ * @param offset - Relative offset from the start position given by whence
+ * @param whence - One of ::SceIoSeekMode.
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+SceUID ksceIoLseekAsync(SceUID fd, SceOff offset, int whence, SceIoAsyncParam* asyncParam);
+
+/**
+ * Synchronize device state with state of file or directory being opened
+ *
+ * @param fd - Opened file descriptor to sync
+ * @param fd - Device-dependent flag
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+SceUID ksceIoSyncByFdAsync(SceUID fd, int flag, SceIoAsyncParam* asyncParam);
+
+/**
+ * Synchronize device state with memory state
+ *
+ * @param fd - Device name
+ * @param fd - Device-dependent flag
+ * @param asyncParam - parameters related to async operation.
+ *
+ * @return A non-negative integer is a valid op handle, anything else an error
+ */
+SceUID ksceIoSyncAsync(const char* device, int flag, SceIoAsyncParam* asyncParam);
+
+/**
   * This function is unimplemented.
   *
   * @return SCE_KERNEL_ERROR_UNSUP (0x80020004)
@@ -297,6 +425,62 @@ int ksceIoDevctlAsync(
   void *bufp,
   SceSize buflen,
   SceIoAsyncParam* asyncParam);
+
+/*--------------------IO Priority--------------------*/
+
+/*Valid priority values range: 1 (highest) - 15 (lowest). Default priority value is 14*/
+
+/**
+ * Set IO operations priority for file descriptor for non-game application
+ *
+ * @param fd - File UID
+ * @param priority - IO operations priority
+ *
+ * @return < 0 on error.
+ */
+int ksceIoSetPriorityForSystem(SceUID fd, int priority);
+
+/**
+ * Get IO operations priority for file descriptor for non-game application
+ *
+ * @param fd - File UID
+ *
+ * @return A non-negative integer is a valid priority, anything else an error
+ */
+int ksceIoGetPriorityForSystem(SceUID fd);
+
+/**
+ * Set IO operations priority for caller process (will be default for all new IO operations)
+ *
+ * @param priority - New default IO operations priority
+ *
+ * @return < 0 on error.
+ */
+int ksceIoSetProcessDefaultPriorityForSystem(int priority);
+
+/**
+ * Get IO operations priority for process
+ *
+ * @return A non-negative integer is a valid priority, anything else an error
+ */
+int ksceIoGetProcessDefaultPriorityForSystem(void);
+
+/**
+ * Set IO operations priority for caller thread for non-game
+ * application (will be default for all new IO operations)
+ *
+ * @param priority - New default IO operations priority
+ *
+ * @return < 0 on error.
+ */
+int ksceIoSetThreadDefaultPriorityForSystem(int priority);
+
+/**
+ * Get IO operations priority for thread for non-game application
+ *
+ * @return A non-negative integer is a valid priority, anything else an error
+ */
+int ksceIoGetThreadDefaultPriorityForSystem(void);
 
 /*--------------------Device mount functions--------------------*/
 

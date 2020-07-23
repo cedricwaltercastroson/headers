@@ -42,6 +42,7 @@
 #include <psp2/kernel/dmac.h>
 #include <psp2/kernel/error.h>
 #include <psp2/kernel/iofilemgr.h>
+#include <psp2/kernel/iofilemgr/async.h>
 #include <psp2/kernel/iofilemgr/dirent.h>
 #include <psp2/kernel/iofilemgr/stat.h>
 #include <psp2/kernel/loadcore.h>
