@@ -124,15 +124,6 @@
  *     \defgroup SceDevCtl Device Control Library
  *      Send devctl commands, (un)assign io devices
  *
- *     \defgroup SceDirEnt Directory Entries Library
- *      Open a dir, and list the files in it
- *
- *     \defgroup SceFcntl File Control Library
- *      Open, Rename, Read, Write files
- *
- *     \defgroup SceStat File Status Library
- *      Make/Remove a dir, Read/Change the status of a file
- *
  *     \defgroup SceIofilemgr Filesystem Library
  *      Filesystem related functions
  * \}
