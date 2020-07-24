@@ -42,7 +42,7 @@ typedef struct SceKernelThreadInfo {
 	/** Thread stack pointer */
 	void            *stack;
 	/** Thread stack size */
-	int             stackSize;
+	SceSize         stackSize;
 	/** Initial priority */
 	int             initPriority;
 	/** Current priority */
@@ -122,7 +122,7 @@ typedef struct SceKernelFaultingProcessInfo {
  * @return UID of the created thread, or an error code.
  */
 SceUID ksceKernelCreateThread(const char *name, SceKernelThreadEntry entry, int initPriority,
-                             int stackSize, SceUInt attr, int cpuAffinityMask,
+                             SceSize stackSize, SceUInt attr, int cpuAffinityMask,
                              const SceKernelThreadOptParam *option);
 
 /**
@@ -281,7 +281,7 @@ typedef struct SceKernelSemaInfo {
  * @par Example:
  * @code
  * int semaid;
- * semaid = ksceKernelCreateSema("MySema", 0, 1, 1, 0);
+ * semaid = ksceKernelCreateSema("MySema", 0, 1, 1, NULL);
  * @endcode
  *
  * @param name - Specifies the name of the sema
@@ -322,7 +322,7 @@ int ksceKernelSignalSema(SceUID semaid, int signal);
  *
  * @par Example:
  * @code
- * ksceKernelWaitSema(semaid, 1, 0);
+ * ksceKernelWaitSema(semaid, 1, NULL);
  * @endcode
  *
  * @param semaid - The sema id returned from ::ksceKernelCreateSema
@@ -381,7 +381,7 @@ typedef struct SceKernelMutexInfo {
  * @par Example:
  * @code
  * int mutexid;
- * mutexid = ksceKernelCreateMutex("MyMutex", 0, 1, 1, 0);
+ * mutexid = ksceKernelCreateMutex("MyMutex", 0, 1, NULL);
  * @endcode
  *
  * @param name - Specifies the name of the mutex
@@ -553,7 +553,7 @@ typedef enum SceEventFlagWaitTypes {
   * @par Example:
   * @code
   * int evid;
-  * evid = ksceKernelCreateEventFlag("wait_event", 0, 0, 0);
+  * evid = ksceKernelCreateEventFlag("wait_event", 0, 0, NULL);
   * @endcode
   */
 SceUID ksceKernelCreateEventFlag(const char *name, int attr, int bits, SceKernelEventFlagOptParam *opt);
@@ -746,7 +746,7 @@ typedef struct SceKernelCallbackInfo {
  * @par Example:
  * @code
  * int cbid;
- * cbid = ksceKernelCreateCallback("Exit Callback", exit_cb, NULL);
+ * cbid = ksceKernelCreateCallback("Exit Callback", 0, exit_cb, NULL);
  * @endcode
  *
  * @param name - A textual name for the callback
@@ -870,7 +870,7 @@ SceUID ksceKernelGetProcessId(void);
  *
  * @return     Zero on success
  */
-int ksceKernelRunWithStack(int stack_size, int (*to_call)(void *), void *args);
+int ksceKernelRunWithStack(SceSize stack_size, int (* to_call)(void *), void *args);
 
 /**
  * @brief      Call from an abort handler to get info on faulting process
@@ -883,7 +883,7 @@ int ksceKernelGetFaultingProcess(SceKernelFaultingProcessInfo *info);
 
 /* Workqueues */
 
-typedef int (*SceKernelWorkQueueWorkFunction)(void *args);
+typedef int (* SceKernelWorkQueueWorkFunction)(void *args);
 
 /**
  * @brief      Enqueue work to a workqueue
@@ -987,7 +987,7 @@ int ksceKernelChangeThreadSuspendStatus(SceUID thid, int status);
  *
  * @return The UID of the created pipe, < 0 on error
  */
-SceUID ksceKernelCreateMsgPipe(const char *name, int type, int attr, unsigned int bufSize, void *opt);
+SceUID ksceKernelCreateMsgPipe(const char *name, int type, int attr, SceSize bufSize, void *opt);
 
 /**
  * Delete a message pipe
@@ -1001,7 +1001,7 @@ int ksceKernelDeleteMsgPipe(SceUID uid);
 typedef struct
 {
     const void *message;
-    unsigned int size;
+    SceSize size;
 } MsgPipeSendData;
 
 /**
@@ -1029,12 +1029,12 @@ int ksceKernelSendMsgPipeVector(SceUID uid, const MsgPipeSendData *v, unsigned i
  *
  * @return 0 on success, < 0 on error
  */
-int ksceKernelTrySendMsgPipeVector(SceUID uid, const MsgPipeSendData *v, unsigned int size, int unk1, void *unk2);
+int ksceKernelTrySendMsgPipeVector(SceUID uid, const MsgPipeSendData *v, SceSize size, int unk1, void *unk2);
 
 typedef struct
 {
     void *message;
-    unsigned int size;
+    SceSize size;
 } MsgPipeRecvData;
 
 /**
@@ -1062,7 +1062,7 @@ int ksceKernelReceiveMsgPipeVector(SceUID uid, const MsgPipeRecvData *v, unsigne
  *
  * @return 0 on success, < 0 on error
  */
-int ksceKernelTryReceiveMsgPipeVector(SceUID uid, const MsgPipeRecvData *v, unsigned int size, int unk1, void *unk2);
+int ksceKernelTryReceiveMsgPipeVector(SceUID uid, const MsgPipeRecvData *v, SceSize size, int unk1, void *unk2);
 
 /**
  * Cancel a message pipe
