@@ -163,7 +163,7 @@ SceSasResult sceSasGetGrainInternal(SceUID sasCoreId);
 SceSasResult sceSasSetOutputmodeInternal(SceUID sasCoreId, SceUInt32 outputmode);
 SceSasResult sceSasGetOutputmodeInternal(SceUID sasCoreId);
 
-SceSasResult sceSasCoreInternal(SceUID sasCoreId, SceInt16 *out);
+SceSasResult sceSasCoreInternal(SceUID sasCoreId, SceInt16 *inOut, SceInt32 lvol, SceInt32 rvol);
 
 SceSasResult sceSasSetVoiceInternal(SceUID sasCoreId, SceInt32 iVoiceNum, const void *vagBuf, SceSize size, SceUInt32 loopflag);
 SceSasResult sceSasSetVoicePCMInternal(SceUID sasCoreId, SceInt32 iVoiceNum, const void *pcmBuf, SceSize size, SceInt32 loopsize);
