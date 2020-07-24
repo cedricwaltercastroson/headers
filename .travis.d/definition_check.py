@@ -69,8 +69,6 @@ def read_nids():
                     nids = user_nids
             if SECTION != 'functions':
                 continue
-            if nids.get(k):
-                errors.append('%s: NID conflict %s' % (line_no + 1, k))
             nids[k] = 1
     return dict(user_nids, **kernel_nids), errors
 
