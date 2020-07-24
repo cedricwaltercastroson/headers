@@ -6,7 +6,7 @@
 #ifndef _PSP2_IO_DRENT_H_
 #define _PSP2_IO_DRENT_H_
 
-#pragma GCC warning "psp2kern/io/dirent.h is deprecated. Please include psp2kern/kernel/iofilemgr/dirent.h."
+#pragma message "psp2kern/io/dirent.h is deprecated. Please include psp2kern/kernel/iofilemgr/dirent.h."
 
 #include <psp2kern/kernel/iofilemgr/dirent.h>
 

@@ -6,7 +6,7 @@
 #ifndef _PSP2_IO_FCNTL_H_
 #define _PSP2_IO_FCNTL_H_
 
-#pragma GCC warning "psp2/io/fcntl.h is deprecated. Please include psp2/kernel/iofilemgr.h."
+#pragma message "psp2/io/fcntl.h is deprecated. Please include psp2/kernel/iofilemgr.h."
 
 #include <psp2/kernel/iofilemgr.h>
 

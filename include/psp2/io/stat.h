@@ -6,7 +6,7 @@
 #ifndef _PSP2_IO_STAT_H_
 #define _PSP2_IO_STAT_H_
 
-#pragma GCC warning "psp2/io/stat.h is deprecated. Please include psp2/kernel/iofilemgr/stat.h."
+#pragma message "psp2/io/stat.h is deprecated. Please include psp2/kernel/iofilemgr/stat.h."
 
 #include <psp2/kernel/iofilemgr/stat.h>
 
