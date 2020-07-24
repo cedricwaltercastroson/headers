@@ -1,6 +1,5 @@
 /**
  * \usergroup{SceKernelConstant}
- * \usage{psp2common/kernel/constants.h}
  */
 
 #ifndef _DOLCESDK_PSP2COMMON_KERNEL_CONSTANTS_H_

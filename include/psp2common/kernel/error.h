@@ -1,6 +1,5 @@
 /**
  * \usergroup{SceKernelError}
- * \usage{psp2common/kernel/error.h}
  */
 
 #ifndef _DOLCESDK_PSP2COMMON_KERNEL_ERROR_H_

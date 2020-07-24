@@ -1,6 +1,5 @@
 /**
  * \usergroup{SceTypes}
- * \usage{psp2common/kernel/types.h}
  */
 
 #ifndef _DOLCESDK_PSP2COMMON_KERNEL_TYPES_H_

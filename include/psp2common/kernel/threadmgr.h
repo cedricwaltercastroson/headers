@@ -1,6 +1,5 @@
 /**
  * \usergroup{SceThreadMgr}
- * \usage{psp2common/kernel/threadmgr.h}
  */
 
 #ifndef _DOLCESDK_PSP2COMMON_KERNEL_THREADMGR_H_

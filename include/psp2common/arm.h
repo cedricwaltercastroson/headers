@@ -1,6 +1,5 @@
 /**
  * \usergroup{SceCPU}
- * \usage{psp2common/arm.h}
  */
 
 #ifndef _DOLCESDK_PSP2COMMON_ARM_H_

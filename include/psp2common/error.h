@@ -1,6 +1,5 @@
 /**
  * \usergroup{SceError}
- * \usage{psp2common/error.h}
  */
 
 #ifndef _DOLCESDK_PSP2COMMON_ERROR_H_

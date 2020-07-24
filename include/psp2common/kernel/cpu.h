@@ -1,6 +1,5 @@
 /**
  * \usergroup{SceCPU}
- * \usage{psp2common/kernel/cpu.h}
  */
 
 #ifndef _DOLCESDK_PSP2COMMON_KERNEL_CPU_H_
