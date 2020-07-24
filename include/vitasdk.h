@@ -3,7 +3,6 @@
 
 #include <vitasdk/utils.h>
 
-#include <psp2/defs.h>
 #include <psp2/types.h>
 #include <psp2/appmgr.h>
 #include <psp2/apputil.h>

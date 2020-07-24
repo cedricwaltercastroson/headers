@@ -11,7 +11,6 @@
 #include <psp2/system_param.h>
 #include <psp2/gxm.h>
 #include <psp2/types.h>
-#include <psp2/defs.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -118,7 +117,7 @@ void sceCommonDialogConfigParamInit(SceCommonDialogConfigParam *param)
 	memset(param, 0x0, sizeof(SceCommonDialogConfigParam));
 	param->language = SCE_SYSTEM_PARAM_LANG_MAX_VALUE;
 	param->enterButtonAssign = SCE_SYSTEM_PARAM_ENTER_BUTTON_MAX_VALUE;
-	param->sdkVersion = PSP2_SDK_VERSION;
+	param->sdkVersion = 0x03570011;
 };
 
 int sceCommonDialogSetConfigParam(const SceCommonDialogConfigParam *configParam);

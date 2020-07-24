@@ -8,7 +8,6 @@
 #define _PSP2_SHAREDFB_H_
 
 #include <psp2/types.h>
-#include <psp2/defs.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -38,7 +37,7 @@ int sceSharedFbGetInfo(SceUID fb_id, SceSharedFbInfo *info);
 static inline
 SceUID sceSharedFbOpen(int index)
 {
-	return _sceSharedFbOpen(index, PSP2_SDK_VERSION);
+	return _sceSharedFbOpen(index, 0x03570011);
 };
 
 #ifdef __cplusplus
