@@ -342,6 +342,9 @@
  *      Initialize and execute Fibers (individual execution units)
  *      Fibers are individual execution units that are like lightweight mini-threads.
  *
+ *     \defgroup SceUlt User Level Threads Library
+ *      Lightweight threads and sync objects
+ *
  *     \defgroup SceSqlite Sqlite Library
  *      Use the Sqlite Library on the Vita
  *

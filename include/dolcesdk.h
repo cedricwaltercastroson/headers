@@ -129,6 +129,7 @@
 #include <psp2/trigger_util.h>
 #include <psp2/types.h>
 #include <psp2/udcd.h>
+#include <psp2/ult.h>
 #include <psp2/usbd.h>
 #include <psp2/usbserial.h>
 #include <psp2/usbstorvstor.h>
