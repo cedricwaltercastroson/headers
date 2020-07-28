@@ -21,16 +21,14 @@ script:
     - bash $TRAVIS_BUILD_DIR/.travis.d/download_external_libs.sh
     # Remove installed headers and stubs
     - cd $DOLCESDK/arm-dolce-eabi/include
-    - rm -rf psp2{,kern} dolcesdk dolcesdk{,kern}.h
+    - rm -rf psp2{,kern,common} dolcesdk dolcesdk{,kern}.h
     - cd $DOLCESDK/arm-dolce-eabi/lib
     - rm -rf *_stub{,_weak}.a
     # Build headers and stubs and install
     - cd $TRAVIS_BUILD_DIR
-    - cp -r include/* $DOLCESDK/arm-dolce-eabi/include
-    - dolce-libs-gen db.yml output
-    - cd output
-    - make > /dev/null
-    - cp *_stub{,_weak}.a $DOLCESDK/arm-dolce-eabi/lib
+    - cmake .
+    - make --quiet --jobs=$(nproc) prepare-stubs install
+    - find stubs -name Makefile -execdir make --quiet --jobs=$(nproc) install ';'
     # Build samples
     - cd $TRAVIS_BUILD_DIR
     - git clone https://github.com/DolceSDK/samples
