@@ -1,5 +1,5 @@
 version: 2
-firmware: 3.67
+firmware: 3.65
 modules:
   SceSysmem:
     nid: 0x3380B323
