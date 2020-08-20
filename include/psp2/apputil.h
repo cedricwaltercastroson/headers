@@ -7,8 +7,9 @@
 #ifndef _PSP2_APPUTL_H_
 #define _PSP2_APPUTL_H_
 
-#include <psp2/types.h>
 #include <stdint.h>
+#include <psp2/types.h>
+#include <psp2/appmgr.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -47,7 +48,7 @@ typedef enum SceAppUtilErrorCode {
 typedef unsigned int SceAppUtilBootAttribute;
 typedef unsigned int SceAppUtilAppEventType;
 typedef unsigned int SceAppUtilSaveDataSlotId;
-typedef unsigned int SceAppUtilSaveDataSlotStatus;
+typedef SceAppMgrSaveDataSlotStatus SceAppUtilSaveDataSlotStatus;
 typedef unsigned int SceAppUtilAppParamId;
 typedef unsigned int SceAppUtilBgdlStatusType;
 
@@ -70,18 +71,12 @@ typedef struct SceAppUtilBootParam {
 	uint8_t reserved[32];           //!< Reserved range
 } SceAppUtilBootParam;
 
-typedef struct SceAppUtilSaveDataMountPoint {
-	uint8_t data[16];
-} SceAppUtilSaveDataMountPoint;
-
 typedef struct SceAppUtilAppEventParam {
 	SceAppUtilAppEventType type; //!< Event type
 	uint8_t dat[1024];           //!< Event parameter
 } SceAppUtilAppEventParam;
 
-typedef struct SceAppUtilMountPoint {
-	int8_t data[16]; //!< Mount point
-} SceAppUtilMountPoint;
+typedef SceAppMgrMountPoint SceAppUtilMountPoint;
 
 typedef struct SceAppUtilSaveDataSlotEmptyParam {
 	SceWChar16 *title;     //!< Title string
@@ -98,17 +93,7 @@ typedef struct SceAppUtilSaveDataSlot {
 	SceAppUtilSaveDataSlotEmptyParam *emptyParam; //!< Settings for empty slot
 } SceAppUtilSaveDataSlot;
 
-typedef struct SceAppUtilSaveDataSlotParam {
-	SceAppUtilSaveDataSlotStatus status; //!< Status
-	SceWChar16 title[32];                //!< Title name
-	SceWChar16 subTitle[64];             //!< Subtitle
-	SceWChar16 detail[256];              //!< Detail info
-	char iconPath[64];                   //!< Icon path
-	int userParam;                       //!< User param
-	SceSize sizeKB;                      //!< Data size (In KB)
-	SceDateTime modifiedTime;            //!< Last modified time
-	uint8_t reserved[48];                //!< Reserved range
-} SceAppUtilSaveDataSlotParam;
+typedef SceAppMgrSaveDataSlotParam SceAppUtilSaveDataSlotParam;
 
 typedef struct SceAppUtilSaveDataSaveItem {
 	const char *dataPath;             //!< Path to savedata
@@ -119,15 +104,7 @@ typedef struct SceAppUtilSaveDataSaveItem {
 	uint8_t reserved[36];             //!< Reserved range
 } SceAppUtilSaveDataSaveItem;
 
-typedef struct SceAppUtilSaveDataFile {
-	const char *filePath;
-	void *buf;
-	SceSize bufSize;
-	SceOff offset;
-	unsigned int mode;
-	unsigned int progDelta;
-	uint8_t reserved[32];
-} SceAppUtilSaveDataFile;
+typedef SceAppMgrSaveDataDataSaveItem SceAppUtilSaveDataDataSaveItem;
 
 typedef struct SceAppUtilSaveDataFileSlot {
 	unsigned int id;
@@ -175,32 +152,32 @@ int sceAppUtilAppEventParseLiveArea(const SceAppUtilAppEventParam *eventParam, c
 //! Create savedata slot
 int sceAppUtilSaveDataSlotCreate(unsigned int slotId,
 	SceAppUtilSaveDataSlotParam *param,
-	SceAppUtilSaveDataMountPoint *mountPoint);
+	SceAppUtilMountPoint *mountPoint);
 
 //! Delete savedata slot
 int sceAppUtilSaveDataSlotDelete(unsigned int slotId,
-	SceAppUtilSaveDataMountPoint *mountPoint);
+	SceAppUtilMountPoint *mountPoint);
 
 //! Set savedata slot param
 int sceAppUtilSaveDataSlotSetParam(unsigned int slotId,
 	SceAppUtilSaveDataSlotParam *param,
-	SceAppUtilSaveDataMountPoint *mountPoint);
+	SceAppUtilMountPoint *mountPoint);
 
 //! Get savedata slot param
 int sceAppUtilSaveDataSlotGetParam(unsigned int slotId,
 	SceAppUtilSaveDataSlotParam *param,
-	SceAppUtilSaveDataMountPoint *mountPoint);
+	SceAppUtilMountPoint *mountPoint);
 
 //!< Write savedata files and directories
 int sceAppUtilSaveDataDataSave(SceAppUtilSaveDataFileSlot *slot,
-	SceAppUtilSaveDataFile *files, unsigned int fileNum,
-	SceAppUtilSaveDataMountPoint *mountPoint,
+	SceAppUtilSaveDataDataSaveItem *files, unsigned int fileNum,
+	SceAppUtilMountPoint *mountPoint,
 	SceSize *requiredSizeKB);
 
 //!< Delete savedata files
 int sceAppUtilSaveDataDataRemove(SceAppUtilSaveDataFileSlot *slot,
 	SceAppUtilSaveDataRemoveItem *files, unsigned int fileNum,
-	SceAppUtilSaveDataMountPoint *mountPoint);
+	SceAppUtilMountPoint *mountPoint);
 
 //! Mount music data
 int sceAppUtilMusicMount();
