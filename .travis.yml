@@ -1,11 +1,10 @@
 language: c
 os: linux
 dist: bionic
-cache:
-    directories:
-        - $HOME/downloads
-before_script:
-    - bash $TRAVIS_BUILD_DIR/.travis.d/download_external_apps.sh
+addons:
+    apt:
+        packages:
+            - doxygen
 script:
     - set -e
     - cd $TRAVIS_BUILD_DIR
@@ -39,4 +38,4 @@ script:
     - make
     # Build docs
     - cd $TRAVIS_BUILD_DIR/docs
-    - $HOME/doxygen/doxygen*/bin/doxygen
+    - doxygen
