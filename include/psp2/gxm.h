@@ -7,11 +7,7 @@
 #ifndef _DOLCESDK_PSP2_GXM_H_
 #define _DOLCESDK_PSP2_GXM_H_
 
-#include <stdbool.h>
-#include <psp2/types.h>
-#include <psp2/gxm/constants.h>
-#include <psp2/gxm/errors.h>
-#include <psp2/gxm/structs.h>
+#include <psp2/gxm/internal.h>
 
 #ifdef __cplusplus
 extern "C" {
