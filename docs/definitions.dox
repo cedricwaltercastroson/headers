@@ -123,6 +123,9 @@
  * \{
  *     \defgroup SceIofilemgr Filesystem Library
  *      Filesystem related functions
+ *
+ *     \defgroup SceFios2 File I/O Scheduler version 2
+ *      Schedule and manage I/O requests
  * \}
  *
  *

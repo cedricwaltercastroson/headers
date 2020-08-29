@@ -26,4 +26,12 @@
 #define _SCE_UNLIKELY(expr)    _SCE_EXPECT(expr, 0)
 #define _SCE_LIKELY(expr)      _SCE_EXPECT(expr, 1)
 
+#if !defined(_SCE_IMPORT)
+#define _SCE_IMPORT
+#endif
+
+#if !defined(_SCE_EXPORT)
+#define _SCE_EXPORT
+#endif
+
 #endif // _DOLCESDK_PSP2COMMON_SCEBASE_H_
