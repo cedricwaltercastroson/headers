@@ -378,5 +378,8 @@
  *     \defgroup SceDbg Debug functions library
  *      Logging and assertion functions
  *
+ *     \defgroup SceCes Character encoding scheme library
+ *      Conversions between character encoding schemes
+ *
  * \}
  */
