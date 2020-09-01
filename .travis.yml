@@ -17,7 +17,6 @@ script:
     # Make sure headers are valid
     - find $INCLUDE_DIR -type f -name "*.h" | xargs -I FN -n 1 -P 4 arm-dolce-eabi-gcc -I$INCLUDE_DIR -c FN -o /dev/null
     - find $INCLUDE_DIR -type f -name "*.h" | xargs -I FN -n 1 -P 4 arm-dolce-eabi-g++ -I$INCLUDE_DIR -c FN -o /dev/null
-    - bash $TRAVIS_BUILD_DIR/.travis.d/download_external_libs.sh
     # Remove installed headers and stubs
     - cd $DOLCESDK/arm-dolce-eabi/include
     - rm -rf psp2{,kern,common} dolcesdk dolcesdk{,kern}.h
@@ -28,6 +27,8 @@ script:
     - cmake .
     - make --quiet --jobs=$(nproc) prepare-stubs install
     - find stubs -name Makefile -execdir make --quiet --jobs=$(nproc) install ';'
+    # Install packages
+    - dolcesdk-update-packages
     # Build samples
     - cd $TRAVIS_BUILD_DIR
     - git clone https://github.com/DolceSDK/samples
