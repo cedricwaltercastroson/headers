@@ -431,6 +431,7 @@ int ksceSysrootUseExternalStorage(void);
 
 int ksceSysrootUseInternalStorage(void);
 
+__attribute__((__format__(__printf__, 1, 2)))
 int ksceDebugPrintf(const char *fmt, ...);
 
 typedef struct SceKernelDebugMessageContext {
@@ -443,15 +444,19 @@ typedef struct SceKernelDebugMessageContext {
 } SceKernelDebugMessageContext;
 
 // msg_type_flag : 0 or 0xB
-
+__attribute__((__format__(__printf__, 3, 4)))
 int ksceDebugPrintf2(int msg_type_flag, const SceKernelDebugMessageContext *ctx, const char *fmt, ...);
 
 int ksceDebugVprintf(const char *fmt, va_list args);
 
 int ksceDebugPrintKernelPanic(const SceKernelDebugMessageContext *ctx, void *some_address);
+
+__attribute__((__format__(__printf__, 3, 4)))
 int ksceDebugPrintfKernelPanic(const SceKernelDebugMessageContext *ctx, void *some_address, const char *fmt, ...);
 
 int ksceDebugPrintKernelAssertion(int condition, const SceKernelDebugMessageContext *ctx, void *some_address);
+
+__attribute__((__format__(__printf__, 5, 6)))
 int ksceDebugPrintfKernelAssertion(int unk, int condition, const SceKernelDebugMessageContext *ctx, int some_address, const char *fmt, ...);
 
 int ksceDebugSetHandlers(int (*func)(int unk, const char *format, const va_list args), void *args);
