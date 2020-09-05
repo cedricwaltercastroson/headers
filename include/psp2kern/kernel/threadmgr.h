@@ -15,14 +15,6 @@ extern "C" {
 
 /* Threads. */
 
-/** Additional options used when creating threads. */
-typedef struct SceKernelThreadOptParam {
-	/** Size of the ::SceKernelThreadOptParam structure. */
-	SceSize   size;
-	/** Attributes */
-	SceUInt32       attr;
-} SceKernelThreadOptParam;
-
 /** Structure to hold the status information for a thread
   * @see ksceKernelGetThreadInfo
   */
