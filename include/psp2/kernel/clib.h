@@ -19,6 +19,7 @@ extern "C" {
  *
  * @return none
  */
+__attribute__((__noreturn__))
 void sceClibAbort(void);
 
 char sceClibLookCtypeTable(char ch);
