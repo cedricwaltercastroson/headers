@@ -1,12 +1,6 @@
 language: c
-dist: focal
+dist: bionic
 sudo: false
-
-addons:
-    apt:
-      packages:
-        - libclang1-9
-        - libclang-cpp9
 
 cache:
     directories:
