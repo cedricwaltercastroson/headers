@@ -4,6 +4,6 @@ DB_FILE_PATH='./db.yml'
 LIBSEP="        \(functions\|variables\):" # name of the yaml block we want to check
 IFS=@
 # iterate over each block and `sort --check` they content
-for lib in $(grep "$LIBSEP\|          " "$DB_FILE_PATH" | sed "s/$LIBSEP/$IFS/"); do
+for lib in $(sed "s/#.*//" "$DB_FILE_PATH" | sed "/^[[:space:]]*$/d" | grep "$LIBSEP\|          " | sed "s/$LIBSEP/$IFS/"); do
   printf "$lib" | grep -o "          [^:]*"| LC_ALL=C sort -c
 done

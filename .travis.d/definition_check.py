@@ -67,8 +67,10 @@ def read_nids():
     with open(DB_FILE_PATH, 'r') as d:
         SECTION = None
         for line_no, line in enumerate(readlines(d)):
-            line = line.strip()
-            k, v = line.split(':')[:3]
+            line = line.split('#')[0].strip()
+            if line == '':
+                continue
+            k, v = line.split(':')[:2]
             if not v.strip():
                 SECTION = k
                 continue
