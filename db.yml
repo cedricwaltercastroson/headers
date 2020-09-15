@@ -3250,7 +3250,7 @@ modules:
           _ZN3sce4Json5Value12referBooleanEv: 0xF7F9550C
           _ZN3sce4Json5Value12referIntegerEv: 0x9F0BD96B
           _ZN3sce4Json5Value13referUIntegerEv: 0xD1C592D6
-          _ZN3sce4Json5Value21setNullAccessCallBackEPFRKS1_NS0_9ValueTypeEPS2_PvES6_: 0x349F2D89
+          _ZN3sce4Json5Value21setNullAccessCallbackEPFRKS1_NS0_9ValueTypeEPS2_PvES6_: 0x349F2D89
           _ZN3sce4Json5Value3setENS0_9ValueTypeE: 0x925E89F8
           _ZN3sce4Json5Value3setERKNS0_5ArrayE: 0x49389A02
           _ZN3sce4Json5Value3setERKNS0_6ObjectE: 0x8725FD85
@@ -9146,8 +9146,6 @@ modules:
           ksceKernelCpuIcacheInvalidateAllU: 0xAEE0B489
           ksceKernelCpuIcacheInvalidateRange: 0xF4C7F578
           ksceKernelCpuPreloadEngineKill: 0xD0D85FF8
-          ksceKernelCpuRestoreContext: 0x0A4F0FB9
-          ksceKernelCpuSaveContext: 0x211B89DA
           ksceKernelCpuUnrestrictedMemcpy: 0x8C683DEC
           ksceKernelCpuUpdateSCTLR: 0x04008CF7
           ksceKernelMMUVAtoPAWithMode: 0x67343A07
