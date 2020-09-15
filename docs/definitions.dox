@@ -384,5 +384,8 @@
  *     \defgroup SceCes Character encoding scheme library
  *      Conversions between character encoding schemes
  *
+ *     \defgroup SceIniFileProcessor INI file library
+ *      Parse and write INI files
+ *
  * \}
  */

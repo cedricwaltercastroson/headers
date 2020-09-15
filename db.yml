@@ -2527,6 +2527,59 @@ modules:
           sceIncomingDialogOpen: 0x2BEDC1A0
           sceIncomingDialogSwitchToDialog: 0x0123B83A
           sceIncomingDialogTerm: 0x860B1885
+  SceIniFileProcessor:
+    nid: 0x999CFBD5
+    libraries:
+      SceIniFileProcessor:
+        kernel: false
+        nid: 0x5EE28724
+        functions:
+          # sce::Ini::InitParameter::InitParameter() (complete object constructor)
+          _ZN3sce3Ini13InitParameterC1Ev: 0x14146AF5
+          # sce::Ini::InitParameter::InitParameter() (base object constructor)
+          _ZN3sce3Ini13InitParameterC2Ev: 0x9F8FC03F
+          # int sce::Ini::IniFileProcessor::createFile(const char*, const char*, int)
+          _ZN3sce3Ini16IniFileProcessor10createFileEPKcS3_i: 0xFD8DE2F8
+          # int sce::Ini::IniFileProcessor::initialize(const sce::Ini::InitParameter*)
+          _ZN3sce3Ini16IniFileProcessor10initializeEPKNS0_13InitParameterE: 0x0975D396
+          # int sce::Ini::IniFileProcessor::deserialize(const char*, size_t);
+          _ZN3sce3Ini16IniFileProcessor11deserializeEPKcj: 0xB785FE67
+          # int sce::Ini:IniFileProcessor::terminateForError()
+          _ZN3sce3Ini16IniFileProcessor17terminateForErrorEv: 0x48A6BDCB
+          # int sce::Ini:IniFileProcessor::add(const char*, const char*)
+          _ZN3sce3Ini16IniFileProcessor3addEPKcS3_: 0x703E1BAE
+          # int sce::Ini::IniFileProcessor::del(const char*)
+          _ZN3sce3Ini16IniFileProcessor3delEPKc: 0xC2B3A41C
+          # int sce::Ini:IniFileProcessor::get(const char*, char*, size_t)
+          _ZN3sce3Ini16IniFileProcessor3getEPKcPcj: 0x7F22CED1
+          # int sce::Ini::IniFileProcessor::set(const char*, const char*)
+          _ZN3sce3Ini16IniFileProcessor3setEPKcS3_: 0xDBC5F9A8
+          # int sce::Ini::IniFileProcessor::size()
+          _ZN3sce3Ini16IniFileProcessor4sizeEv: 0xD7648B61
+          # int sce::Ini::IniFileProcessor::parse(char*, char*, size_t)
+          _ZN3sce3Ini16IniFileProcessor5parseEPcS2_j: 0xD5C7B3EE
+          # int sce::Ini::IniFileProcessor::reset()
+          _ZN3sce3Ini16IniFileProcessor5resetEv: 0xB48C756B
+          # int sce::Ini:IniFileProcessor::cleanup()
+          _ZN3sce3Ini16IniFileProcessor7cleanupEv: 0xA51840C7
+          # int sce::Ini:IniFileProcessor::openFile(const char*, const char*, int)
+          _ZN3sce3Ini16IniFileProcessor8openFileEPKcS3_i: 0x51B791E8
+          # int sce::Ini::IniFileProcessor::closeFile()
+          _ZN3sce3Ini16IniFileProcessor9closeFileEv: 0xEDFAD6B4
+          # int sce::Ini::IniFileProcessor::serialize(const char**, size_t*)
+          _ZN3sce3Ini16IniFileProcessor9serializeEPPKcPj: 0x109B4E83
+          # int sce::Ini::IniFileProcessor::terminate()
+          _ZN3sce3Ini16IniFileProcessor9terminateEv: 0x2BEF7391
+          # sce::Ini:IniFileProcessor::IniFileProcessor() (complete object constructor)
+          _ZN3sce3Ini16IniFileProcessorC1Ev: 0xA0F71A2C
+          # sce::Ini:IniFileProcessor::IniFileProcessor() (base object constructor)
+          _ZN3sce3Ini16IniFileProcessorC2Ev: 0x746B194F
+          # sce::Ini::IniFileProcessor::~IniFileProcessor() (deleting object destructor)
+          _ZN3sce3Ini16IniFileProcessorD0Ev: 0x9F57E743
+          # sce::Ini::IniFileProcessor::~IniFileProcessor() (complete object destructor)
+          _ZN3sce3Ini16IniFileProcessorD1Ev: 0xACEB88BD
+          # sce::Ini::IniFileProcessor::~IniFileProcessor() (base object destructor)
+          _ZN3sce3Ini16IniFileProcessorD2Ev: 0x7169CE28
   SceIofilemgr:
     nid: 0x9642948C
     libraries:
