@@ -3781,6 +3781,15 @@ modules:
         nid: 0xF9AC7CF8
         functions:
           sceKernelGetRandomNumber: 0xB2700165
+      SceKernelForMono:
+        kernel: false
+        nid: 0x5FEEA076
+        functions:
+          sceKernelGetThreadContextForMono: 0xAD210F16
+          sceKernelResumeThreadForMono: 0x9A6D085B
+          sceKernelSetThreadContextForMono: 0x92A0964D
+          sceKernelSuspendThreadForMono: 0x38839DA2
+          sceKernelWaitExceptionForMono: 0x1BECC64C
   SceLibMono:
     nid: 0x25CB8DCB
     libraries:
