@@ -13,29 +13,29 @@ extern "C" {
 
 typedef enum SceAudioInErrorCode {
 	//! Undefined error
-	SCE_AUDIO_IN_ERROR_FATAL                = 0x80260100,
+	SCE_AUDIO_IN_ERROR_FATAL                = (int)0x80260100,
 	//! Bad value of port number
-	SCE_AUDIO_IN_ERROR_INVALID_PORT         = 0x80260101,
+	SCE_AUDIO_IN_ERROR_INVALID_PORT         = (int)0x80260101,
 	//! Invalid sample length
-	SCE_AUDIO_IN_ERROR_INVALID_SIZE         = 0x80260102,
+	SCE_AUDIO_IN_ERROR_INVALID_SIZE         = (int)0x80260102,
 	//! Invalid sample frequency
-	SCE_AUDIO_IN_ERROR_INVALID_SAMPLE_FREQ  = 0x80260103,
+	SCE_AUDIO_IN_ERROR_INVALID_SAMPLE_FREQ  = (int)0x80260103,
 	//! Invalid port type
-	SCE_AUDIO_IN_ERROR_INVALID_PORT_TYPE    = 0x80260104,
+	SCE_AUDIO_IN_ERROR_INVALID_PORT_TYPE    = (int)0x80260104,
 	//! Invalid pointer value
-	SCE_AUDIO_IN_ERROR_INVALID_POINTER      = 0x80260105,
+	SCE_AUDIO_IN_ERROR_INVALID_POINTER      = (int)0x80260105,
 	//! Invalid port param
-	SCE_AUDIO_IN_ERROR_INVALID_PORT_PARAM   = 0x80260106,
+	SCE_AUDIO_IN_ERROR_INVALID_PORT_PARAM   = (int)0x80260106,
 	//! Cannot open no ports
-	SCE_AUDIO_IN_ERROR_PORT_FULL            = 0x80260107,
+	SCE_AUDIO_IN_ERROR_PORT_FULL            = (int)0x80260107,
 	//! Not enough memory
-	SCE_AUDIO_IN_ERROR_OUT_OF_MEMORY        = 0x80260108,
+	SCE_AUDIO_IN_ERROR_OUT_OF_MEMORY        = (int)0x80260108,
 	//! Port is not opened
-	SCE_AUDIO_IN_ERROR_NOT_OPENED           = 0x80260109,
+	SCE_AUDIO_IN_ERROR_NOT_OPENED           = (int)0x80260109,
 	//! Tried to input while busy
-	SCE_AUDIO_IN_ERROR_BUSY                 = 0x8026010A,
+	SCE_AUDIO_IN_ERROR_BUSY                 = (int)0x8026010A,
 	//! Invalid parameter
-	SCE_AUDIO_IN_ERROR_INVALID_PARAMETER    = 0x8026010B
+	SCE_AUDIO_IN_ERROR_INVALID_PARAMETER    = (int)0x8026010B
 } SceAudioInErrorCode;
 
 typedef enum SceAudioInPortType {

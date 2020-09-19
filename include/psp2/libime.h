@@ -19,29 +19,29 @@ extern "C" {
  * SceIme Error Codes
  */
 
-#define SCE_IME_ERROR_ALREADY_OPENED               0x80100700
-#define SCE_IME_ERROR_NOT_OPENED                   0x80100701
-#define SCE_IME_ERROR_INVALID_POINTER              0x80100702
-#define SCE_IME_ERROR_INVALID_PARAM                0x80100703
-#define SCE_IME_ERROR_NO_MEMORY                    0x80100704
-#define SCE_IME_ERROR_CONNECTION_FAILED            0x80100705
-#define SCE_IME_ERROR_INVALID_TEXT                 0x80100706
-#define SCE_IME_ERROR_TOO_MANY_REQUESTS            0x80100707
+#define SCE_IME_ERROR_ALREADY_OPENED               ((int)0x80100700)
+#define SCE_IME_ERROR_NOT_OPENED                   ((int)0x80100701)
+#define SCE_IME_ERROR_INVALID_POINTER              ((int)0x80100702)
+#define SCE_IME_ERROR_INVALID_PARAM                ((int)0x80100703)
+#define SCE_IME_ERROR_NO_MEMORY                    ((int)0x80100704)
+#define SCE_IME_ERROR_CONNECTION_FAILED            ((int)0x80100705)
+#define SCE_IME_ERROR_INVALID_TEXT                 ((int)0x80100706)
+#define SCE_IME_ERROR_TOO_MANY_REQUESTS            ((int)0x80100707)
 
-#define SCE_IME_ERROR_INVALID_SIZE                 0x80100710
-#define SCE_IME_ERROR_INVALID_INPUT_METHOD         0x80100712
-#define SCE_IME_ERROR_INVALID_SUPPORTED_LANGUAGES  0x80100713
-#define SCE_IME_ERROR_INVALID_TYPE                 0x80100714
-#define SCE_IME_ERROR_INVALID_OPTION               0x80100715
-#define SCE_IME_ERROR_INVALID_WORK                 0x80100716
-#define SCE_IME_ERROR_INVALID_ARG                  0x80100717
-#define SCE_IME_ERROR_INVALID_HANDLER              0x80100718
-#define SCE_IME_ERROR_INVALID_MAX_TEXT_LENGTH      0x80100719
-#define SCE_IME_ERROR_INVALID_INPUT_TEXT_BUFFER    0x8010071A
-#define SCE_IME_ERROR_INVALID_RESERVED             0x8010071B
-#define SCE_IME_ERROR_INVALID_ENTER_LABEL          0x8010071C
+#define SCE_IME_ERROR_INVALID_SIZE                 ((int)0x80100710)
+#define SCE_IME_ERROR_INVALID_INPUT_METHOD         ((int)0x80100712)
+#define SCE_IME_ERROR_INVALID_SUPPORTED_LANGUAGES  ((int)0x80100713)
+#define SCE_IME_ERROR_INVALID_TYPE                 ((int)0x80100714)
+#define SCE_IME_ERROR_INVALID_OPTION               ((int)0x80100715)
+#define SCE_IME_ERROR_INVALID_WORK                 ((int)0x80100716)
+#define SCE_IME_ERROR_INVALID_ARG                  ((int)0x80100717)
+#define SCE_IME_ERROR_INVALID_HANDLER              ((int)0x80100718)
+#define SCE_IME_ERROR_INVALID_MAX_TEXT_LENGTH      ((int)0x80100719)
+#define SCE_IME_ERROR_INVALID_INPUT_TEXT_BUFFER    ((int)0x8010071A)
+#define SCE_IME_ERROR_INVALID_RESERVED             ((int)0x8010071B)
+#define SCE_IME_ERROR_INVALID_ENTER_LABEL          ((int)0x8010071C)
 
-#define SCE_IME_ERROR_INTERNAL                     0x80100750
+#define SCE_IME_ERROR_INTERNAL                     ((int)0x80100750)
 
 /*
  * SceIme Constants

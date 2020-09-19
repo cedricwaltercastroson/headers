@@ -53,19 +53,19 @@
 ///
 	typedef enum SceAvPlayerErrorCodes{
 		SCE_AVPLAYER_NO_ERR						= 0x00,			///< No error occurred.
-		SCE_AVPLAYER_ERR_INVALID_PARAMS			= 0x806A0001,	///< An error occurred because invalid parameters were passed via the API.
-		SCE_AVPLAYER_ERR_OPERATION_FAILED		= 0x806A0002,	///< An error occurred because the desired operation failed.
-		SCE_AVPLAYER_ERR_NO_MEMORY				= 0x806A0003,	///< An error occurred because there was not enough memory to continue.
-		SCE_AVPLAYER_ERR_NOT_SUPPORTED			= 0x806A0004,	///< An error occurred because the content was unsupported.
+		SCE_AVPLAYER_ERR_INVALID_PARAMS			= (int)0x806A0001,	///< An error occurred because invalid parameters were passed via the API.
+		SCE_AVPLAYER_ERR_OPERATION_FAILED		= (int)0x806A0002,	///< An error occurred because the desired operation failed.
+		SCE_AVPLAYER_ERR_NO_MEMORY				= (int)0x806A0003,	///< An error occurred because there was not enough memory to continue.
+		SCE_AVPLAYER_ERR_NOT_SUPPORTED			= (int)0x806A0004,	///< An error occurred because the content was unsupported.
 
-		SCE_AVPLAYER_WAR_FILE_NONINTERLEAVED	= 0x806A00A0,	///< Warning: The file is non-interleaved.
-		SCE_AVPLAYER_WAR_LOOPING_BACK			= 0x806A00A1,	///< Warning: The file got looped back.
-		SCE_AVPLAYER_WAR_JUMP_COMPLETE			= 0x806A00A3,	///< Warning: The jump operation was completed.
+		SCE_AVPLAYER_WAR_FILE_NONINTERLEAVED	= (int)0x806A00A0,	///< Warning: The file is non-interleaved.
+		SCE_AVPLAYER_WAR_LOOPING_BACK			= (int)0x806A00A1,	///< Warning: The file got looped back.
+		SCE_AVPLAYER_WAR_JUMP_COMPLETE			= (int)0x806A00A3,	///< Warning: The jump operation was completed.
 
-		SCE_AVPLAYER_INFO_MARLIN_ENCRY			= 0x806A00B0,	///< Marlin Drm is required for this content.
-		SCE_AVPLAYER_INFO_PLAYREADY_ENCRY		= 0x806A00B4,	///< Playready Drm is required for this content.
-		SCE_AVPLAYER_INFO_AES_ENCRY				= 0x806A00B5,	///< AES-128 bit encryption is used for this content.
-		SCE_AVPLAYER_INFO_OTHER_ENCRY			= 0x806A00BF	///< Other encryptions are used for this content.
+		SCE_AVPLAYER_INFO_MARLIN_ENCRY			= (int)0x806A00B0,	///< Marlin Drm is required for this content.
+		SCE_AVPLAYER_INFO_PLAYREADY_ENCRY		= (int)0x806A00B4,	///< Playready Drm is required for this content.
+		SCE_AVPLAYER_INFO_AES_ENCRY				= (int)0x806A00B5,	///< AES-128 bit encryption is used for this content.
+		SCE_AVPLAYER_INFO_OTHER_ENCRY			= (int)0x806A00BF	///< Other encryptions are used for this content.
 	}SceAvPlayerErrorCodes;
 
 /// @brief

@@ -15,9 +15,9 @@ extern "C" {
 #endif
 
 typedef enum ScePspnetAdhocctlErrorCode {
-	SCE_ERROR_NET_ADHOCCTL_INVALID_ARG             = 0x80410B04,
-	SCE_ERROR_NET_ADHOCCTL_ALREADY_INITIALIZED     = 0x80410B07,
-	SCE_ERROR_NET_ADHOCCTL_NOT_INITIALIZED         = 0x80410B08
+	SCE_ERROR_NET_ADHOCCTL_INVALID_ARG             = (int)0x80410B04,
+	SCE_ERROR_NET_ADHOCCTL_ALREADY_INITIALIZED     = (int)0x80410B07,
+	SCE_ERROR_NET_ADHOCCTL_NOT_INITIALIZED         = (int)0x80410B08
 } ScePspnetAdhocctlErrorCode;
 
 typedef enum ScePspnetAdhocctlAdhocType {

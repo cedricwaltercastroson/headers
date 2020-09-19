@@ -16,15 +16,15 @@ extern "C" {
 
 /* error codes */
 
-#define SCE_FIBER_ERROR_NULL          0x80590001
-#define SCE_FIBER_ERROR_ALIGNMENT     0x80590002
-#define SCE_FIBER_ERROR_RANGE         0x80590003
-#define SCE_FIBER_ERROR_INVALID       0x80590004
-#define SCE_FIBER_ERROR_PERMISSION    0x80590005
-#define SCE_FIBER_ERROR_STATE         0x80590006
-#define SCE_FIBER_ERROR_BUSY          0x80590007
-#define SCE_FIBER_ERROR_AGAIN         0x80590008
-#define SCE_FIBER_ERROR_FATAL         0x80590009
+#define SCE_FIBER_ERROR_NULL          ((int)0x80590001)
+#define SCE_FIBER_ERROR_ALIGNMENT     ((int)0x80590002)
+#define SCE_FIBER_ERROR_RANGE         ((int)0x80590003)
+#define SCE_FIBER_ERROR_INVALID       ((int)0x80590004)
+#define SCE_FIBER_ERROR_PERMISSION    ((int)0x80590005)
+#define SCE_FIBER_ERROR_STATE         ((int)0x80590006)
+#define SCE_FIBER_ERROR_BUSY          ((int)0x80590007)
+#define SCE_FIBER_ERROR_AGAIN         ((int)0x80590008)
+#define SCE_FIBER_ERROR_FATAL         ((int)0x80590009)
 
 /* constants */
 

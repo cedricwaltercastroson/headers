@@ -16,9 +16,9 @@ extern "C" {
 
 /** GXT error codes */
 typedef int SceGxtErrorCode;
-#define SCE_GXT_ERROR_INVALID_VALUE        0x805D0000
-#define SCE_GXT_ERROR_INVALID_POINTER      0x805D0001
-#define SCE_GXT_ERROR_INVALID_ALIGNMENT    0x805D0002
+#define SCE_GXT_ERROR_INVALID_VALUE        ((int)0x805D0000)
+#define SCE_GXT_ERROR_INVALID_POINTER      ((int)0x805D0001)
+#define SCE_GXT_ERROR_INVALID_ALIGNMENT    ((int)0x805D0002)
 
 /**	A header for a GXT file.
 	This structure should be located right at the start of the GXT file.

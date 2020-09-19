@@ -15,9 +15,9 @@ extern "C" {
 
 /** Touch error codes */
 typedef enum SceTouchErrorCode {
-	SCE_TOUCH_ERROR_INVALID_ARG   = 0x80350001,
-	SCE_TOUCH_ERROR_PRIV_REQUIRED = 0x80350002,
-	SCE_TOUCH_ERROR_FATAL         = 0x803500FF
+	SCE_TOUCH_ERROR_INVALID_ARG   = (int)0x80350001,
+	SCE_TOUCH_ERROR_PRIV_REQUIRED = (int)0x80350002,
+	SCE_TOUCH_ERROR_FATAL         = (int)0x803500FF
 } SceTouchErrorCode;
 
 #define SCE_TOUCH_MAX_REPORT 8	//!< FIXME 6 on front | 4 on back

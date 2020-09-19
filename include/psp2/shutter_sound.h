@@ -14,9 +14,9 @@ extern "C" {
 #endif
 
 typedef enum SceShutterSoundErrorCode {
-	SCE_SHUTTER_SOUND_ERROR_INVALID_ARGUMENT = 0x80105201, //!< Invalid argument
-	SCE_SHUTTER_SOUND_ERROR_INTERNAL         = 0x80105202, //!< Internal error
-	SCE_SHUTTER_SOUND_ERROR_FATAL            = 0x80105203  //!< Fatal error
+	SCE_SHUTTER_SOUND_ERROR_INVALID_ARGUMENT = (int)0x80105201, //!< Invalid argument
+	SCE_SHUTTER_SOUND_ERROR_INTERNAL         = (int)0x80105202, //!< Internal error
+	SCE_SHUTTER_SOUND_ERROR_FATAL            = (int)0x80105203  //!< Fatal error
 } SceShutterSoundErrorCode;
 
 typedef enum SceShutterSoundType {
