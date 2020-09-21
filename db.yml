@@ -2189,7 +2189,6 @@ modules:
           sceGxmMidSceneFlush0940: 0x51FE0899
           sceGxmNotificationWait: 0x9F448E79
           sceGxmPadHeartbeat: 0x3D25FCE9
-          sceGxmPadTriggerGpuPaTrace: 0x47E06984
           sceGxmPopUserMarker: 0x4FA073A6
           sceGxmPrecomputedDrawInit: 0xA197F096
           sceGxmPrecomputedDrawSetAllVertexStreams: 0xB6C6F571
@@ -2198,7 +2197,6 @@ modules:
           sceGxmPrecomputedDrawSetVertexStream: 0x6C936214
           sceGxmPrecomputedFragmentStateGetDefaultUniformBuffer: 0xCECB584A
           sceGxmPrecomputedFragmentStateInit: 0xE297D7AF
-          sceGxmPrecomputedFragmentStateSetAllAuxiliarySurfaces: 0x9D93B63A
           sceGxmPrecomputedFragmentStateSetAllTextures: 0xC383DE39
           sceGxmPrecomputedFragmentStateSetAllUniformBuffers: 0x5A783DC3
           sceGxmPrecomputedFragmentStateSetDefaultUniformBuffer: 0x91236858
@@ -2247,10 +2245,8 @@ modules:
           sceGxmPushUserMarker: 0x3276C475
           sceGxmRemoveRazorGpuCaptureBuffer: 0x0468E3F2
           sceGxmRenderTargetGetDriverMemBlock: 0x49553737
-          sceGxmRenderTargetGetHostMem: 0xD0EDAB4C
           sceGxmReserveFragmentDefaultUniformBuffer: 0x7B1FABB6
           sceGxmReserveVertexDefaultUniformBuffer: 0x97118913
-          sceGxmSetAuxiliarySurface: 0x91B4F7F4
           sceGxmSetBackDepthBias: 0x17B3BF86
           sceGxmSetBackDepthFunc: 0xB042A4D2
           sceGxmSetBackDepthWriteEnable: 0xC18B706B
@@ -2290,7 +2286,6 @@ modules:
           sceGxmSetTwoSidedEnable: 0x0DE9AEB7
           sceGxmSetUniformDataF: 0x65DD0C84
           sceGxmSetUserMarker: 0xC7A8CB77
-          sceGxmSetValidationEnable: 0x8C6A24C9
           sceGxmSetVertexDefaultUniformBuffer: 0xC697CAE5
           sceGxmSetVertexProgram: 0x31FF8ABD
           sceGxmSetVertexStream: 0x895DF2E9
@@ -2324,7 +2319,6 @@ modules:
           sceGxmShaderPatcherRegisterProgram: 0x2B528462
           sceGxmShaderPatcherReleaseFragmentProgram: 0xBE2743D1
           sceGxmShaderPatcherReleaseVertexProgram: 0xAC1FF2DA
-          sceGxmShaderPatcherSetAuxiliarySurface: 0x8E5FCC2A
           sceGxmShaderPatcherSetUserData: 0xF9B8FCFD
           sceGxmShaderPatcherUnregisterProgram: 0xF103AF8A
           sceGxmSyncObjectCreate: 0x6A6013E1
@@ -8796,16 +8790,6 @@ modules:
           sceSslGetSubjectName: 0x9B2F1BC1
           sceSslInit: 0x3C733316
           sceSslTerm: 0x03CE6E3A
-  SceStdio:
-    nid: 0x771A73C0
-    libraries:
-      SceStdio:
-        kernel: false
-        nid: 0x8997609C
-        functions:
-          sceKernelStderr: 0x35EE7CF5
-          sceKernelStdin: 0x54237407
-          sceKernelStdout: 0x9033E9BD
   SceSulpha:
     nid: 0x2C476B6B
     libraries:
@@ -8863,8 +8847,6 @@ modules:
           ksceSysconCtrlManualChargeMode: 0xC6A2C9EF
           ksceSysconCtrlRMRPower: 0x710A7CF0
           ksceSysconCtrlSdPower: 0xBE1ADE4F
-          ksceSysconCtrlWirelessPower: 0x4FBDA504
-          ksceSysconCtrlWirelessPowerDown: 0xDF8C6D2D
           ksceSysconEnableHibernateIO: 0x4946538A
           ksceSysconEndConfigstorageTransaction: 0xFCC3E8EE
           ksceSysconGetBaryonTimestamp: 0x4D588A0A
@@ -9378,7 +9360,6 @@ modules:
           ksceKernelOpenUidForName: 0xD76E7452
           ksceKernelProcModeVAtoPA: 0x61A67D32
           ksceKernelRemapBlock: 0xDFE2C8CB
-          ksceKernelRoMemcpyKernelToUserForPid: 0x571D2739
           ksceKernelSetNameForPidForUid: 0x12624884
           ksceKernelSetObjectForUid: 0x4CFA4100
           ksceKernelStrncpyKernelToUser: 0x80BD6FEB
@@ -9387,7 +9368,6 @@ modules:
           ksceKernelStrnlenUser: 0xB429D419
           ksceKernelStrnlenUserForPid: 0x9929EB07
           ksceKernelSwitchPidContext: 0x2D711589
-          ksceKernelSwitchVmaForPid: 0x6F2ACDAE
           ksceKernelUidRelease: 0x149885C4
           ksceKernelUidRetain: 0x0F5C84B7
           ksceKernelUnmapMemBlock: 0xFFCD9B60
@@ -9793,17 +9773,6 @@ modules:
           sceUsbSerialSetup: 0x290E08B4
           sceUsbSerialStart: 0xE3BEC18C
           sceUsbSerialStatus: 0xA6A2F5DE
-      SceUsbSerialForDriver:
-        kernel: true
-        nid: 0x8829C2F3
-        functions:
-          ksceUsbSerialClose: 0xE6B1E64F
-          ksceUsbSerialGetRecvBufferSize: 0xF531B5AE
-          ksceUsbSerialRecv: 0x6B5E296F
-          ksceUsbSerialSend: 0x0C2E73C0
-          ksceUsbSerialSetup: 0x590B8F97
-          ksceUsbSerialStart: 0xFEE7F4BA
-          ksceUsbSerialStatus: 0x8C426906
   SceUsbServ:
     nid: 0xAE54F579
     libraries:

@@ -286,8 +286,6 @@ int ksceKernelDeleteUserUid(SceUID pid, SceUID user_uid);
 int ksceKernelDeleteUid(SceUID uid);
 int ksceKernelFindClassByName(const char *name, SceClass **cls);
 
-int ksceKernelSwitchVmaForPid(SceUID pid);
-
 void *ksceKernelGetSysrootBuffer(void);
 int ksceKernelGetPidContext(SceUID pid, SceKernelProcessContext **ctx);
 
