@@ -740,6 +740,26 @@ modules:
           sceJpegInitMJpegWithParam: 0x518163A7
           sceJpegMJpegCsc: 0xC2380E3A
           sceJpegSplitDecodeMJpeg: 0x4598EC9C
+      SceVideodecAsyncUser:
+        kernel: false
+        nid: 0x7D00D21F
+        functions:
+          sceAvcdecDecodeAuNalAuNongameapp: 0x0E4A6EE3
+          sceAvcdecDecodeAuNongameapp: 0x867C75AD
+          sceAvcdecDecodeGetPictureNongameapp: 0xCF3CFC70
+          sceAvcdecRegisterCallbackNongameapp: 0x497F7EC7
+          sceAvcdecUnregisterCallbackNongameapp: 0xE07A91B5
+          sceAvcdecUnregisterCallbackWithCbidNongameapp: 0x7761522A
+      SceVideodecLowDelayUser:
+        kernel: false
+        nid: 0x6354EEFF
+        functions:
+          sceAvcdecSetLowDelayModeNongameapp: 0xD57F82C1
+      SceVideodecRecoveryPointUser:
+        kernel: false
+        nid: 0x6D3CD128
+        functions:
+          sceAvcdecSetRecoveryPointSEIMode: 0x58C620EC
       SceVideodecUser:
         kernel: false
         nid: 0x163C3727
@@ -752,12 +772,9 @@ modules:
           sceAvcdecDecode: 0xD6190A06
           sceAvcdecDecodeAuInternal: 0x2385A82B
           sceAvcdecDecodeAuNalAuInternal: 0x68628BC4
-          sceAvcdecDecodeAuNalAuNongameapp: 0x0E4A6EE3
-          sceAvcdecDecodeAuNongameapp: 0x867C75AD
           sceAvcdecDecodeAvailableSize: 0x441673E3
           sceAvcdecDecodeFlush: 0x25F31020
           sceAvcdecDecodeGetPictureInternal: 0x63237A8F
-          sceAvcdecDecodeGetPictureNongameapp: 0xCF3CFC70
           sceAvcdecDecodeGetPictureWithWorkPictureInternal: 0x66F65155
           sceAvcdecDecodeNalAu: 0x6C68A38F
           sceAvcdecDecodeNalAuWithWorkPicture: 0xDDF41798
@@ -773,16 +790,11 @@ modules:
           sceAvcdecQueryDecoderMemSizeInternal: 0x7BC8DFEA
           sceAvcdecQueryDecoderMemSizeNongameapp: 0xFA072F66
           sceAvcdecRegisterCallbackInternal: 0x8FA94451
-          sceAvcdecRegisterCallbackNongameapp: 0x497F7EC7
           sceAvcdecSetDecodeMode: 0x75803C83
           sceAvcdecSetDecodeModeInternal: 0xF57CC2BC
           sceAvcdecSetInterlacedStreamMode: 0x2DD70FC8
-          sceAvcdecSetLowDelayModeNongameapp: 0xD57F82C1
-          sceAvcdecSetRecoveryPointSEIMode: 0x58C620EC
           sceAvcdecUnregisterCallbackInternal: 0x24E905BF
-          sceAvcdecUnregisterCallbackNongameapp: 0xE07A91B5
           sceAvcdecUnregisterCallbackWithCbidInternal: 0x001069FB
-          sceAvcdecUnregisterCallbackWithCbidNongameapp: 0x7761522A
           sceM4vdecCreateDecoder: 0x17C6AC9E
           sceM4vdecCreateDecoderInternal: 0x4D4CA34E
           sceM4vdecCsc: 0xB4BC325B
@@ -2870,14 +2882,12 @@ modules:
         kernel: true
         nid: 0x9DF04041
         functions:
-          ksceKernelClearIntrPending: 0x4DC48A01
           ksceKernelDisableSubIntr: 0x259C6D9E
           ksceKernelEnableSubIntr: 0x901E41D8
           ksceKernelGetIntrMasked: 0x6EC07C56
           ksceKernelGetIntrPriority: 0xE427D050
           ksceKernelGetIntrTarget: 0x353CFAAE
           ksceKernelIsIntrAllowedInCurrentContext: 0x182EE3E3
-          ksceKernelIsIntrPending: 0xA269003D
           ksceKernelIsSubInterruptOccurred: 0x950B864B
           ksceKernelMaskIntr: 0x180435EC
           ksceKernelRegisterIntrHandler: 0x5C1FEB29
@@ -2899,6 +2909,8 @@ modules:
         kernel: true
         nid: 0x07AC5E3A
         functions:
+          ksceKernelClearIntrPending: 0x4DC48A01
+          ksceKernelIsIntrPending: 0xA269003D
           ksceKernelQueryIntrHandlerInfo: 0xB5AFAE49
   SceKernelModulemgr:
     nid: 0x726C6635
@@ -9412,6 +9424,7 @@ modules:
           ksceKernelSysrootSetProcessHandler: 0x0F07C3FC
           ksceKernelSysrootSetSystemSwVersion: 0x3276086B
           ksceSysrootGetHardwareInfo: 0x930B1342
+          ksceSysrootIsAuCodecIcConexant: 0x46E72428
           ksceSysrootUtMgrHasNpTestFlag: 0xA43599E9
           ksceSysrootUtMgrSetNpTestFlag: 0xEE5D6CE9
       SceSysrootForKernel:
@@ -9446,7 +9459,6 @@ modules:
           ksceSysrootGetSelfInfo: 0xF10AB792
           ksceSysrootGetSessionId: 0x84783B71
           ksceSysrootGetWakeupFactor: 0x2F97041A
-          ksceSysrootIsAuCodecIcConexant: 0x46E72428
           ksceSysrootIsBsodReboot: 0x4373AC96
           ksceSysrootIsExternalBootMode: 0x89D19090
           ksceSysrootIsSafeMode: 0x834439A7
