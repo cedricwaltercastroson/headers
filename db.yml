@@ -577,7 +577,7 @@ modules:
           sceAudioOutSetEffectType: 0xB41FACCE
           sceAudioOutSetPortVolume_forUser: 0x65840F3D
           sceAudioOutSetVolume: 0x64167F11
-  SceAudioIn:
+  SceAudioin:
     nid: 0x3DFB6F18
     libraries:
       SceAudioIn:
@@ -1493,7 +1493,7 @@ modules:
           sceDTraceClientOpen: 0x761062E9
           sceDTraceHelperIoctl: 0x413C420E
           sceDTraceRemoveHelperDof: 0xF2C9207A
-  SceDbg:
+  SceLibDbg:
     nid: 0x0E0ABB49
     libraries:
       SceDbg:
@@ -1721,8 +1721,8 @@ modules:
           sceFiberStartContextSizeCheck: 0xCD543A71
           sceFiberStopContextSizeCheck: 0x67F70867
           sceFiberSwitch: 0xE4283144
-  SceFios2:
-    nid: 0x00000032
+  SceLibFios2:
+    nid: 0xC72B85FD
     libraries:
       SceFios2:
         kernel: false
@@ -1969,7 +1969,7 @@ modules:
           ksceFiosKernelOverlayResolveWithRangeSync: 0xD3D968FC
           ksceFiosKernelOverlayThreadIsDisabled: 0xE71192C5
           ksceFiosKernelOverlayThreadSetDisabled: 0x03727E5E
-  SceGameUpdate:
+  SceLibGameUpdate:
     nid: 0x0207A645
     libraries:
       SceGameUpdate:
@@ -2377,7 +2377,7 @@ modules:
           sceHidMouseRegisterReadHintCallback: 0x90C5CB0A
           sceHidMouseUnregisterEnumHintCallback: 0x3E005E5B
           sceHidMouseUnregisterReadHintCallback: 0xAC591B15
-  SceHttp:
+  SceLibHttp:
     nid: 0xB015B405
     libraries:
       SceHttp:
@@ -6090,7 +6090,7 @@ modules:
           _ZTVSt9type_info: 0x8E9879A7
           _ZZNSt13basic_filebufIcSt11char_traitsIcEE5_InitEPSt10_Dnk_filetNS2_7_InitflEE7_Stinit: 0xE63750C1
           _ZZNSt13basic_filebufIwSt11char_traitsIwEE5_InitEPSt10_Dnk_filetNS2_7_InitflEE7_Stinit: 0x1D4E29BC
-  SceLiveArea:
+  SceLiveAreaUtil:
     nid: 0x6D180EF6
     libraries:
       SceLiveAreaUtil:
@@ -6105,8 +6105,8 @@ modules:
           sceLiveAreaReplaceAllSync: 0x29C65C0B
           sceLiveAreaUpdateFrameAsync: 0xD330285D
           sceLiveAreaUpdateFrameSync: 0xCFCEDE95
-  SceLocation:
-    nid: 0x00000059
+  SceLibLocation:
+    nid: 0x6015DE69
     libraries:
       SceLibLocation:
         kernel: false
@@ -6134,8 +6134,8 @@ modules:
           sceLocationStopHeadingCallback: 0x92E53F94
           sceLocationStopLocationCallback: 0xED378700
           sceLocationTerm: 0x1E80199A
-  SceLocationExtension:
-    nid: 0x0000005B
+  SceLibLocationExtension:
+    nid: 0xB1CA6E7C
     libraries:
       SceLibLocationExtension:
         kernel: false
@@ -6532,7 +6532,7 @@ modules:
           sceNetAdhocMatchingStart: 0xF13E17BE
           sceNetAdhocMatchingStop: 0x63ABB632
           sceNetAdhocMatchingTerm: 0x6E195CD1
-  SceNetCtl:
+  SceLibNetCtl:
     nid: 0xFA4A5948
     libraries:
       SceNetCtl:
@@ -7066,7 +7066,7 @@ modules:
           sceNpMessageSetAttachedDataUsedFlag: 0xF533A73A
           sceNpMessageSyncMessage: 0x35BE21C5
           sceNpMessageTerm: 0x380230A1
-  SceNpParty:
+  SceNpPartyGameUtil:
     nid: 0x51D3A65A
     libraries:
       SceNpPartyGameUtil:
@@ -7345,7 +7345,7 @@ modules:
           sceNpWebApiUnregisterServicePushEventCallback: 0x06D28ADA
           sceNpWebApiUtilityParseNpId: 0x98CBE11F
   SceOled:
-    nid: 0x5410837A
+    nid: 0xE49D6C00
     libraries:
       SceOledForDriver:
         kernel: true
@@ -7599,7 +7599,7 @@ modules:
           kscePfsMount: 0xA772209C
           kscePfsMount2: 0x2D48AEA2
           kscePfsUnmount: 0x680BC384
-  ScePgf:
+  SceLibPgf:
     nid: 0xB40B26E9
     libraries:
       ScePgf:
@@ -7857,7 +7857,7 @@ modules:
           scePromoterUtilityRemoveSavedata: 0xCB0A59B0
           scePromoterUtilityUpdateLiveArea: 0x17D73ECA
           scePromoterUtilityUpdateUpgradableStatus: 0x82E69783
-  ScePspnetAdhoc:
+  SceLibPspnetAdhoc:
     nid: 0x321EF128
     libraries:
       ScePspnetAdhoc:
@@ -7892,7 +7892,7 @@ modules:
           sceNetAdhocctlGetPeerList: 0x356AA25E
           sceNetAdhocctlInit: 0xE2FE9DD6
           sceNetAdhocctlTerm: 0x97A80065
-  ScePvf:
+  SceLibPvf:
     nid: 0x820F86E8
     libraries:
       ScePvf:
@@ -8189,7 +8189,7 @@ modules:
           sceRtcTickAddTicks: 0x4559E2DB
           sceRtcTickAddWeeks: 0xE713C640
           sceRtcTickAddYears: 0xDF6C3E1B
-  SceRudp:
+  SceLibRudp:
     nid: 0x0B6F819A
     libraries:
       SceLibRudp:
@@ -8227,7 +8227,7 @@ modules:
           sceRudpSetOption: 0xBD87A5CA
           sceRudpTerminate: 0x552B2D3E
           sceRudpWrite: 0x69C9DE15
-  SceSas:
+  SceSasUser:
     nid: 0xBDF706EB
     libraries:
       SceSas:
@@ -8937,7 +8937,7 @@ modules:
         variables:
           sqlite3_temp_directory: 0x1AEC1F74
           sqlite3_version: 0xB80D43C7
-  SceSsl:
+  SceLibSsl:
     nid: 0x9CD6CA85
     libraries:
       SceSsl:
@@ -8966,7 +8966,7 @@ modules:
           sceKernelStdin: 0x54237407
           sceKernelStdout: 0x9033E9BD
   SceSulpha:
-    nid: 0x000000D4
+    nid: 0x2C476B6B
     libraries:
       SceSulpha:
         kernel: false
