@@ -1158,17 +1158,6 @@ modules:
           sceCodecEngineCloseUnmapMemBlock: 0x95EA3B3E
           sceCodecEngineFreeMemoryFromUnmapMemBlock: 0x6A31831D
           sceCodecEngineOpenUnmapMemBlock: 0xF0B4C892
-  SceCodecEnginePerf:
-    nid: 0x0000001A
-    libraries:
-      SceCodecEnginePerf:
-        kernel: false
-        nid: 0x9BF4FFAD
-        functions:
-          sceCodecEnginePmonGetProcessorLoad: 0x2C9DA711
-          sceCodecEnginePmonReset: 0x5D75DF62
-          sceCodecEnginePmonStart: 0x0635EB77
-          sceCodecEnginePmonStop: 0xD2EFAEA1
   SceCodecEngineWrapper:
     nid: 0x50CC4832
     libraries:
@@ -1480,19 +1469,6 @@ modules:
           ksceCtrlSetTurnOffInterval: 0xED8F0129
           ksceCtrlSetVibrationSetting: 0x4D8FE670
           ksceCtrlUnregisterNotifyCallBack: 0x9DAB51C4
-  SceDTrace:
-    nid: 0x00000023
-    libraries:
-      SceDTrace:
-        kernel: false
-        nid: 0x69699F30
-        functions:
-          sceDTraceAddHelperDof: 0xA47807D7
-          sceDTraceClientClose: 0xB8232491
-          sceDTraceClientIoctl: 0x63F0C4F5
-          sceDTraceClientOpen: 0x761062E9
-          sceDTraceHelperIoctl: 0x413C420E
-          sceDTraceRemoveHelperDof: 0xF2C9207A
   SceLibDbg:
     nid: 0x0E0ABB49
     libraries:
@@ -1505,34 +1481,6 @@ modules:
           sceDbgSetBreakOnErrorState: 0xED4A00BA
           sceDbgSetBreakOnWarningState: 0x3DEAECD3
           sceDbgSetMinimumLogLevel: 0x941622FA
-  SceDeci4p:
-    nid: 0x00000027
-    libraries:
-      SceDeci4pUserp:
-        kernel: false
-        nid: 0x797E39C0
-        functions:
-          sceKernelDeci4pClose: 0x63B0C50F
-          sceKernelDeci4pCreateHostProcess: 0x4719A799
-          sceKernelDeci4pCreateHostProcessAndWait: 0x6A09F63A
-          sceKernelDeci4pDisableWatchpoint: 0x5A4CDF97
-          sceKernelDeci4pEnableWatchpoint: 0x3BC66BD8
-          sceKernelDeci4pIsProcessAttached: 0xC4E1D86D
-          sceKernelDeci4pOpen: 0x28578FE8
-          sceKernelDeci4pRead: 0x971E1C66
-          sceKernelDeci4pRegisterCallback: 0x73371F35
-          sceKernelDeci4pWrite: 0xCDA3AAAC
-  SceDeci4pDbgp:
-    nid: 0xC242A649
-    libraries:
-      SceDeci4pDbgpForDriver:
-        kernel: true
-        nid: 0xFBD04C34
-        functions:
-          ksceDbgpGetDTraceBreakpointHandler: 0x01D7C7BF
-          ksceDbgpGetDTraceUsdtHandler: 0x9CD5EE8C
-          ksceDbgpSetDTraceBreakpointHandler: 0x0509AC51
-          ksceDbgpSetDTraceUsdtHandler: 0x7251789E
   SceDisplay:
     nid: 0x3F05296F
     libraries:
@@ -1668,36 +1616,6 @@ modules:
         functions:
           ksceExcpmgrGetData: 0x08CB30E6
           ksceExcpmgrRegisterHandler: 0x03499636
-  SceFace:
-    nid: 0x0000002E
-    libraries:
-      SceFace:
-        kernel: false
-        nid: 0xF5683CF7
-        functions:
-          sceFaceAgeGetWorkingMemorySize: 0x73E9791D
-          sceFaceAgeRangeEstimate: 0x17F3DC79
-          sceFaceAgeRangeIntegrate: 0xB794C6CB
-          sceFaceAllParts: 0xE521EB6F
-          sceFaceAllPartsGetWorkingMemorySize: 0xCF07E1C4
-          sceFaceAttribute: 0x67F0585A
-          sceFaceAttributeGetWorkingMemorySize: 0xA905A467
-          sceFaceDetection: 0xF3045394
-          sceFaceDetectionEx: 0xD9603C69
-          sceFaceDetectionGetDefaultParam: 0xE5689BD1
-          sceFaceDetectionGetWorkingMemorySize: 0xF24B851D
-          sceFaceDetectionLocal: 0x7D71725D
-          sceFaceEstimatePoseRegion: 0xF7E4EC1F
-          sceFaceIdentifyGetFeature: 0xF852E35D
-          sceFaceIdentifyGetWorkingMemorySize: 0x4468B054
-          sceFaceIdentifySimilarity: 0x8F8E9FB1
-          sceFaceParts: 0x87550392
-          sceFacePartsEx: 0x70C9CF95
-          sceFacePartsGetWorkingMemorySize: 0x707B9A1D
-          sceFacePartsResultCheck: 0xCC98B939
-          sceFaceShapeFit: 0x64F45021
-          sceFaceShapeGetWorkingMemorySize: 0xC0812127
-          sceFaceShapeTrack: 0x37704DE9
   SceFiber:
     nid: 0x5BA67C8A
     libraries:
@@ -7510,44 +7428,6 @@ modules:
         nid: 0x073F8C68
         functions:
           scePafWidgetSetFontSize: 0x39B15B98
-  ScePamgr:
-    nid: 0xA6771119
-    libraries:
-      ScePamgr:
-        kernel: false
-        nid: 0xAB606F3F
-        functions:
-          _sceKernelPaAddArmTraceByKey: 0x2CB10FD0
-          _sceKernelPaAddBusTraceByKey: 0x0F05045B
-          _sceKernelPaAddCounterTraceByKey: 0x5F050AAF
-          _sceKernelPaAddGpuTraceByKey: 0x174F2500
-          _sceKernelPaGetGpuSampledData: 0x39096D8F
-          _sceKernelPaSetupTraceBufferByKey: 0x7BD1B4A3
-          sceKernelPaGetIoBaseAddress: 0xA4EE9025
-          sceKernelPaGetSharedKey: 0x30043A1F
-          sceKernelPaGetTimebaseFrequency: 0xCAEE6AF2
-          sceKernelPaGetTimebaseValue: 0x3FD2C5F5
-          sceKernelPaGetTraceBufferSize: 0x0DD84F31
-          sceKernelPaGetTraceBufferStatus: 0x78B19CDE
-          sceKernelPaGetWritePointer: 0xCA0D64C8
-          sceKernelPaInsertBookmark: 0x53B16517
-          sceKernelPaRegister: 0x822E0719
-          sceKernelPaRegisterShared: 0x556105AA
-          sceKernelPaRemoveArmTraceByKey: 0xDD4D0A27
-          sceKernelPaRemoveBusTraceByKey: 0xBFE73BEB
-          sceKernelPaRemoveCounterTraceByKey: 0x1FDDEBF0
-          sceKernelPaRemoveGpuTraceByKey: 0x300258EE
-          sceKernelPaSetBookmarkChannelEnableByKey: 0xF8D02FF4
-          sceKernelPaStartByKey: 0x28D43BE5
-          sceKernelPaStopByKey: 0x8252E671
-          sceKernelPaUnregister: 0x2DE1E55C
-          sceKernelPerfArmPmonClose: 0xC9F72613
-          sceKernelPerfArmPmonOpen: 0x7F5A960E
-          sceKernelPerfArmPmonReset: 0x7B9CF258
-          sceKernelPerfArmPmonSelectEvent: 0x9E55649C
-          sceKernelPerfArmPmonSetCounterValue: 0xFC954C07
-          sceKernelPerfArmPmonStart: 0xAAE516BC
-          sceKernelPerfArmPmonStop: 0xA42BDD17
   ScePerf:
     nid: 0xA2727E86
     libraries:
@@ -7942,47 +7822,6 @@ modules:
           scePvfSetEmboldenRate: 0x6E787722
           scePvfSetResolution: 0xC4444FB3
           scePvfSetSkewValue: 0x3DD09BC9
-  SceRazorCapture:
-    nid: 0x00000099
-    libraries:
-      SceRazorCapture:
-        kernel: false
-        nid: 0x7B2A3F18
-        functions:
-          sceRazorCaptureIsInProgress: 0x911E0AA0
-          sceRazorCaptureSetTrigger: 0xE916B538
-          sceRazorCaptureSetTriggerNextFrame: 0x3D4B7E68
-          sceRazorGpuCaptureEnableSalvage: 0xDFBDCC4C
-          sceRazorGpuCaptureIsInProgress: 0xD2358BFB
-          sceRazorGpuCaptureSetCaptureAllMemory: 0x6A09822D
-          sceRazorGpuCaptureSetCaptureBeforeKick: 0x8EE74EB7
-          sceRazorGpuCaptureSetTrigger: 0x472492DA
-          sceRazorGpuCaptureSetTriggerNextFrame: 0x9DAA7E9C
-          sceRazorGpuCaptureStartSalvageMode: 0x3F0913CF
-  SceRazorHud:
-    nid: 0x0000009B
-    libraries:
-      SceRazorHud:
-        kernel: false
-        nid: 0x250371C2
-        functions:
-          sceRazorCpuHudSetUserMarkerTraceBuffer: 0xECE363EF
-          sceRazorCpuHudUserMarkerEnableAllThreads: 0xFD290A17
-          sceRazorCpuHudUserMarkerEnableThreadId: 0x6DFBAC39
-          sceRazorGpuLiveSetBuffer: 0x29CEFDAA
-          sceRazorGpuLiveSetMetricsGroup: 0x6FD64DE6
-          sceRazorGpuLiveStart: 0xB46382FC
-          sceRazorGpuLiveStop: 0xBD360A69
-          sceRazorGpuLiveTriggerDebugDump: 0xBCB790E9
-          sceRazorGpuPerfGetMode: 0xE3709B44
-          sceRazorGpuTraceRingBufferSize: 0x73F83357
-          sceRazorGpuTraceRingBufferUsed: 0x7A51F1A0
-          sceRazorGpuTraceSetFilename: 0xF867EFE1
-          sceRazorGpuTraceSetMetricsGroup: 0xBFEADB77
-          sceRazorGpuTraceTrigger: 0x528AA4C7
-          sceRazorHudReloadSettings: 0xDFD00BAE
-          sceRazorHudSetDisplayEnabled: 0x77F2F606
-          sceRazorHudSetDisplayFrameCount: 0xCC390860
   SceRegistryMgr:
     nid: 0x761F343C
     libraries:
@@ -8705,57 +8544,6 @@ modules:
         nid: 0x877181ED
         functions:
           sceShutterSoundPlay: 0x7FFB6D79
-  SceSmart:
-    nid: 0x000000CE
-    libraries:
-      SceSmart:
-        kernel: false
-        nid: 0xC2D4E61A
-        functions:
-          sceSmartCreateInstantImageTarget: 0x57C17649
-          sceSmartCreateLearnedImageTarget: 0x5A31446E
-          sceSmartDestroyTarget: 0x0C6A1DA8
-          sceSmartGetTargetInfo: 0x23EDFA9A
-          sceSmartInit: 0x58979C84
-          sceSmartRelease: 0x43DF6D9C
-          sceSmartSceneMappingDispatchAndQuery: 0xF10FDDD1
-          sceSmartSceneMappingDispatchAndQueryWithMask: 0x4D9EA817
-          sceSmartSceneMappingEnableMask: 0x7C4731E2
-          sceSmartSceneMappingFixMap: 0xA96B997B
-          sceSmartSceneMappingForceLocalize: 0x6D4081D3
-          sceSmartSceneMappingGetInitializationPointInfo: 0x9A578A29
-          sceSmartSceneMappingGetLandmarkInfo: 0xB17057EA
-          sceSmartSceneMappingGetNodePointInfo: 0x607AACB5
-          sceSmartSceneMappingGetNumInitializationPoints: 0xDF900B29
-          sceSmartSceneMappingGetNumLandmarks: 0x2260E8BB
-          sceSmartSceneMappingGetNumNodePoints: 0x3159D38C
-          sceSmartSceneMappingLoadMap: 0x961367D3
-          sceSmartSceneMappingPropagateResult: 0x5A9EC64D
-          sceSmartSceneMappingRegisterTarget: 0x55C37F31
-          sceSmartSceneMappingRemoveLandmark: 0x9F30C12A
-          sceSmartSceneMappingReset: 0xC1AD43BC
-          sceSmartSceneMappingRun: 0xC7EBD753
-          sceSmartSceneMappingRunCore: 0xCB30BD4D
-          sceSmartSceneMappingSaveMap: 0x4907021F
-          sceSmartSceneMappingSetCustomListener: 0x4A4F20EF
-          sceSmartSceneMappingSetDenseMapMode: 0xE7867558
-          sceSmartSceneMappingSetDispatchMode: 0xA4EC7755
-          sceSmartSceneMappingStart: 0xA3A82B99
-          sceSmartSceneMappingStop: 0x52EB57E4
-          sceSmartSceneMappingUnregisterTarget: 0x6807CA97
-          sceSmartTargetTrackingDispatchAndQuery: 0x7FE71305
-          sceSmartTargetTrackingGetResults: 0x648C7E15
-          sceSmartTargetTrackingQuery: 0x2808C8CB
-          sceSmartTargetTrackingQuery2: 0xD17EF0B2
-          sceSmartTargetTrackingRegisterTarget: 0x8ACADD54
-          sceSmartTargetTrackingReset: 0xA4A155B5
-          sceSmartTargetTrackingRun: 0xBFD87F61
-          sceSmartTargetTrackingRun2: 0x245EC28A
-          sceSmartTargetTrackingRunWorker: 0x8AE7354A
-          sceSmartTargetTrackingSetSearchPolicy: 0x35344A8E
-          sceSmartTargetTrackingStart: 0x5A121F6C
-          sceSmartTargetTrackingStop: 0xC4C607C0
-          sceSmartTargetTrackingUnregisterTarget: 0x6EE07829
   SceSqlite:
     nid: 0x8D6CC544
     libraries:
