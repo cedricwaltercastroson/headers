@@ -28,8 +28,6 @@
 #include <psp2/gxm/uniforms.h>
 #include <psp2/gxm/vertex_program.h>
 
-#include <psp2/gxm/internal.h>
-
 /** @defgroup render Rendering API
 
 	Structures and functions for creating and rendering GPU data structures.
