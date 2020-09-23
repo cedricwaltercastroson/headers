@@ -126,6 +126,9 @@
  *
  *     \defgroup SceFios2 File I/O Scheduler version 2
  *      Schedule and manage I/O requests
+ *
+ *     \defgroup SceFios2Kernel File System Overlay Library
+ *      Add/Remove file system overlay
  * \}
  *
  *
