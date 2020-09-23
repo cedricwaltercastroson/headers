@@ -1,10 +1,6 @@
 language: c
 os: linux
 dist: bionic
-addons:
-    apt:
-        packages:
-            - doxygen
 script:
     - set -e
     - cd $TRAVIS_BUILD_DIR
@@ -37,6 +33,3 @@ script:
     - cd build
     - cmake ..
     - make
-    # Build docs
-    - cd $TRAVIS_BUILD_DIR/docs
-    - doxygen
