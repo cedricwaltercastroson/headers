@@ -35,18 +35,6 @@ SceInt32 sceCodecEngineCloseUnmapMemBlock(SceUID uid);
 SceUIntVAddr sceCodecEngineAllocMemoryFromUnmapMemBlock(SceUID uid, SceUInt32 size, SceUInt32 alignment);
 SceInt32 sceCodecEngineFreeMemoryFromUnmapMemBlock(SceUID uid, SceUIntVAddr p);
 
-/* debug APIs */
-
-typedef struct SceCodecEnginePmonProcessorLoad {
-	SceUInt32 size;
-	SceUInt32 average;
-} SceCodecEnginePmonProcessorLoad;
-
-SceInt32 sceCodecEnginePmonStart(void);
-SceInt32 sceCodecEnginePmonStop(void);
-SceInt32 sceCodecEnginePmonGetProcessorLoad(SceCodecEnginePmonProcessorLoad *pProcessorLoad);
-SceInt32 sceCodecEnginePmonReset(void);
-
 #if defined(_LANGUAGE_C_PLUS_PLUS)||defined(__cplusplus)||defined(c_plusplus)
 }
 #endif
