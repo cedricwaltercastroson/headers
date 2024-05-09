@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.0)
 
-set(ARCH "arm-dolce-eabi" CACHE STRING "Target architecture")
-set(CMAKE_INSTALL_PREFIX "$ENV{DOLCESDK}/" CACHE PATH "Install prefix")
+set(ARCH "arm-vitasdk-eabi" CACHE STRING "Target architecture")
+set(CMAKE_INSTALL_PREFIX "$ENV{VITASDK}/" CACHE PATH "Install prefix")
 
-if(DEFINED ENV{DOLCESDK})
-  set(LIBS_GEN "$ENV{DOLCESDK}/bin/dolce-libs-gen" CACHE STRING "libs-gen command")
+if(DEFINED ENV{VITASDK})
+  set(LIBS_GEN "$ENV{VITASDK}/bin/vita-libs-gen" CACHE STRING "libs-gen command")
 else()
-  set(LIBS_GEN "dolce-libs-gen" CACHE STRING "libs-gen command")
+  set(LIBS_GEN "vita-libs-gen" CACHE STRING "libs-gen command")
 endif()
 
-project(dolcesdk-target-headers LANGUAGES NONE)
+project(vitasdk-target-headers LANGUAGES NONE)
 
 set(STUBS_DIR stubs)
 set(DB_FILE "${CMAKE_SOURCE_DIR}/db.yml")
