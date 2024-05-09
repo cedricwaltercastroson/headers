@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-set(ARCH "arm-vitasdk-eabi" CACHE STRING "Target architecture")
+set(ARCH "arm-vita-eabi" CACHE STRING "Target architecture")
 set(CMAKE_INSTALL_PREFIX "$ENV{VITASDK}/" CACHE PATH "Install prefix")
 
 if(DEFINED ENV{VITASDK})
