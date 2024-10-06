@@ -5,9 +5,10 @@ This repository contains all Vita headers needed for development.
 ## Structure :
 - `db.yml` contains all the unique identifiers (NID) of the available functions.
 
--      vita-libs-gen db_365.yml db_365
--      cd db_365
--      make install
+Example:
+  -      vita-libs-gen db_365.yml db_365
+  -      cd db_365
+  -      make install
   
 - `include/` contains the header files themselves
   - `psp2` is for header files of user-exported libraries
